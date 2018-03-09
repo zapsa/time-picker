@@ -16,7 +16,9 @@ class ExampleView extends Component {
     return (
       <div>
         Coucou !
-        <TimePicker/>
+        <TimePicker
+          placeholder="Input placeholder"
+        />
       </div>
     );
   }

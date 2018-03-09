@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><%=htmlWebpackPlugin.options.title%></title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,700" rel="stylesheet">
+	</head>
+	<body>
+		<div id="app" class="c-rsg-app"></div>
+		<style type="text/css">
+      /* Sidebar */
+
+      #app.c-rsg-app div[class*="logo"] {
+        border-color: #73777A;
+      }
+
+      #app.c-rsg-app [class*="sidebar"] ul {
+        padding: 0;
+        margin: 0;
+      }
+
+      #app.c-rsg-app [class*="sidebar"] li {
+        padding: 0;
+        margin: 0;
+      }
+
+      #app.c-rsg-app [class*="sidebar"] li a {
+        color: #ebebeb !important;
+        display: block;
+        padding: 0.5rem 2rem;
+      }
+
+      #app.c-rsg-app [class*="sidebar"] li a:hover {
+        background-color: #1F2226 !important;
+        color: #ffffff !important;
+      }
+
+      #app.c-rsg-app [class*="sidebar"] li li a {
+        padding-left: 4rem !important;
+      }
+
+      #app.c-rsg-app [class*="sidebar"] li li li a {
+        padding-left: 7rem !important;
+      }
+
+      /* Cusotm Icon class */
+      .c-rsg-icon .main {
+        overflow: visible;
+      }
+
+      .c-rsg-icon-playground {
+        display: inline-block;
+        margin-right: 2rem;
+      }
+		</style>
+	</body>
+  <script>
+    var iconPath = document.getElementsByClassName("c-rsg-icon");
+
+    for (var i = 0; i < iconPath.length; i++ ){
+      iconPath[i].parentNode.classList.add("c-rsg-icon-playground");
+    }
+  </script>
+</html>
