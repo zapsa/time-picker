@@ -123,21 +123,17 @@ class Panel extends Component {
     } = this.state;
     const disabledHourOptions = this.disabledHours();
     const disabledMinuteOptions = disabledMinutes(value ? value.hour() : null);
-    const disabledSecondOptions = disabledSeconds(value ? value.hour() : null,
-      value ? value.minute() : null);
-    const hourOptions = generateOptions(
-      24, disabledHourOptions, hideDisabledOptions, hourStep
+    const disabledSecondOptions = disabledSeconds(
+      value ? value.hour() : null,
+      value ? value.minute() : null,
     );
-    const minuteOptions = generateOptions(
-      60, disabledMinuteOptions, hideDisabledOptions, minuteStep
-    );
-    const secondOptions = generateOptions(
-      60, disabledSecondOptions, hideDisabledOptions, secondStep
-    );
+    const hourOptions = generateOptions(24, disabledHourOptions, hideDisabledOptions, hourStep);
+    const minuteOptions = generateOptions(60, disabledMinuteOptions, hideDisabledOptions, minuteStep);
+    const secondOptions = generateOptions(60, disabledSecondOptions, hideDisabledOptions, secondStep);
 
     return (
       <div className={classNames({ [`${prefixCls}-inner`]: true, [className]: !!className })}>
-        <Header
+        {/* <Header
           clearText={clearText}
           prefixCls={prefixCls}
           defaultOpenValue={defaultOpenValue}
@@ -158,7 +154,7 @@ class Panel extends Component {
           focusOnOpen={focusOnOpen}
           onKeyDown={onKeyDown}
           inputReadOnly={inputReadOnly}
-        />
+        /> */}
         <Combobox
           prefixCls={prefixCls}
           value={value}

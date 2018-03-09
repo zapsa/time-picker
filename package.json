@@ -1,6 +1,6 @@
 {
   "name": "@zapsa/zap-time-picker",
-  "version": "3.3.10",
+  "version": "3.3.13",
   "description": "Zap datepicker",
   "main": "./dist/",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@zapsa/zap-styles": "^1.1.31",
+    "@zapsa/zap-icons": "^1.5.6",
     "moment": "2.18.1",
     "classnames": "2.x",
     "react-onclickoutside": "^6.7.1",

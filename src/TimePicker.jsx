@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import Trigger from 'rc-trigger';
-import Panel from './Panel';
-// import placements from './placements';
 import moment from 'moment';
+import ZapIcon from '@zapsa/zap-icons';
 import onClickOutside from 'react-onclickoutside';
+import Panel from './Panel';
 
 function noop() {
 }
@@ -278,7 +277,7 @@ class ZapTimePicker extends Component {
     return (
       <div className={`form-group rtp ${open ? 'rtpOpen' : ''}`} style={style}>
         <input
-          className="form-control"
+          className={`form-control ${this.props.inputClassName}`}
           ref={this.saveInputRef}
           type="text"
           placeholder={placeholder}
@@ -287,6 +286,7 @@ class ZapTimePicker extends Component {
           disabled={disabled}
           value={value && value.format(this.getFormat()) || ''}
           autoComplete={autoComplete}
+          {...this.props.inputProps}
           onFocus={() => {
             this.setState({ open: true }, () => {
               this.props.onFocus();
@@ -295,13 +295,25 @@ class ZapTimePicker extends Component {
               this.props.inputProps.onFocus();
             }
           }}
-          {...this.props.inputProps}
           autoFocus={autoFocus}
           onChange={noop}
           readOnly={!!inputReadOnly}
         />
         <label className="form-control-label">{placeholder}</label>
         {this.props.children}
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.setState({
+              value: null,
+              open: false,
+            });
+            this.props.onChange(null);
+          }}
+          className="rtpClear"
+        ><ZapIcon icon="errorCircle--solid" />
+        </button>
         <div className="rtpWrapper">
           <div className="rtpPicker">
             {this.getPanelElement()}
