@@ -277,7 +277,7 @@ class ZapTimePicker extends Component {
     return (
       <div className={`form-group rtp ${open ? 'rtpOpen' : ''}`} style={style}>
         <input
-          className="form-control"
+          className={`form-control ${this.props.inputClassName}`}
           ref={this.saveInputRef}
           type="text"
           placeholder={placeholder}

@@ -277,7 +277,7 @@ var ZapTimePicker = function (_Component) {
         className: 'form-group rtp ' + (open ? 'rtpOpen' : ''),
         style: style
       }, void 0, _react2.default.createElement('input', _extends({
-        className: 'form-control',
+        className: 'form-control ' + this.props.inputClassName,
         ref: this.saveInputRef,
         type: 'text',
         placeholder: placeholder,
