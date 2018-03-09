@@ -293,7 +293,7 @@ var Picker = function (_Component) {
         readOnly: !!inputReadOnly
       }), _jsx('label', {
         className: 'form-control-label'
-      }, void 0, placeholder), _jsx('span', {
+      }, void 0, placeholder), this.props.children, _jsx('span', {
         className: prefixCls + '-icon'
       })));
     }
