@@ -91,7 +91,9 @@ export default class Picker extends Component {
     super(props);
     this.saveInputRef = refFn.bind(this, 'picker');
     this.savePanelRef = refFn.bind(this, 'panelInstance');
-    const { defaultOpen, defaultValue, open = defaultOpen, value = defaultValue } = props;
+    const {
+      defaultOpen, defaultValue, open = defaultOpen, value = defaultValue,
+    } = props;
     this.state = {
       open,
       value,
@@ -144,7 +146,9 @@ export default class Picker extends Component {
   }
 
   getFormat() {
-    const { format, showHour, showMinute, showSecond, use12Hours } = this.props;
+    const {
+      format, showHour, showMinute, showSecond, use12Hours,
+    } = this.props;
     if (format) {
       return format;
     }
@@ -206,7 +210,9 @@ export default class Picker extends Component {
   }
 
   getPopupClassName() {
-    const { showHour, showMinute, showSecond, use12Hours, prefixCls } = this.props;
+    const {
+      showHour, showMinute, showSecond, use12Hours, prefixCls,
+    } = this.props;
     let popupClassName = this.props.popupClassName;
     // Keep it for old compatibility
     if ((!showHour || !showMinute || !showSecond) && !use12Hours) {
@@ -292,7 +298,8 @@ export default class Picker extends Component {
             readOnly={!!inputReadOnly}
           />
           <label className="form-control-label">{placeholder}</label>
-          <span className={`${prefixCls}-icon`}/>
+          {this.props.children}
+          <span className={`${prefixCls}-icon`} />
         </span>
       </Trigger>
     );
