@@ -46,13 +46,13 @@ function refFn(field, component) {
   this[field] = component;
 }
 
-var TimePicker = function (_Component) {
-  _inherits(TimePicker, _Component);
+var ZapTimePicker = function (_Component) {
+  _inherits(ZapTimePicker, _Component);
 
-  function TimePicker(props) {
-    _classCallCheck(this, TimePicker);
+  function ZapTimePicker(props) {
+    _classCallCheck(this, ZapTimePicker);
 
-    var _this = _possibleConstructorReturn(this, (TimePicker.__proto__ || Object.getPrototypeOf(TimePicker)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ZapTimePicker.__proto__ || Object.getPrototypeOf(ZapTimePicker)).call(this, props));
 
     _initialiseProps.call(_this);
 
@@ -72,7 +72,7 @@ var TimePicker = function (_Component) {
     return _this;
   }
 
-  _createClass(TimePicker, [{
+  _createClass(ZapTimePicker, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       var value = nextProps.value,
@@ -299,10 +299,10 @@ var TimePicker = function (_Component) {
     }
   }]);
 
-  return TimePicker;
+  return ZapTimePicker;
 }(_react.Component);
 
-TimePicker.propTypes = {
+ZapTimePicker.propTypes = {
   prefixCls: _propTypes2.default.string,
   clearText: _propTypes2.default.string,
   value: _propTypes2.default.object,
@@ -345,7 +345,7 @@ TimePicker.propTypes = {
   onKeyDown: _propTypes2.default.func,
   autoFocus: _propTypes2.default.bool
 };
-TimePicker.defaultProps = {
+ZapTimePicker.defaultProps = {
   clearText: 'clear',
   prefixCls: 'rc-time-picker',
   defaultOpen: false,
@@ -403,4 +403,4 @@ var _initialiseProps = function _initialiseProps() {
   };
 };
 
-exports.default = TimePicker;
+exports.default = ZapTimePicker;

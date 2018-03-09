@@ -3,14 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.TimePicker = undefined;
+exports.ZapTimePicker = undefined;
 
 require('./styles/datepicker.css');
 
-var _TimePicker2 = require('./TimePicker');
+var _TimePicker = require('./TimePicker');
 
-var _TimePicker3 = _interopRequireDefault(_TimePicker2);
+var _TimePicker2 = _interopRequireDefault(_TimePicker);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.TimePicker = _TimePicker3.default; // eslint-disable-line
+exports.ZapTimePicker = _TimePicker2.default; // eslint-disable-line
