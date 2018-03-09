@@ -27,6 +27,7 @@ class Combobox extends Component {
     value: PropTypes.object,
     onChange: PropTypes.func,
     showHour: PropTypes.bool,
+    open: PropTypes.bool.isRequired,
     showMinute: PropTypes.bool,
     showSecond: PropTypes.bool,
     hourOptions: PropTypes.array,
@@ -83,6 +84,7 @@ class Combobox extends Component {
     const {
       prefixCls, hourOptions, disabledHours, showHour, use12Hours,
     } = this.props;
+
     if (!showHour) {
       return null;
     }
@@ -105,6 +107,7 @@ class Combobox extends Component {
         type="hour"
         onSelect={this.onItemChange}
         onMouseEnter={this.onEnterSelectPanel.bind(this, 'hour')}
+        open={this.props.open}
       />
     );
   }
@@ -127,6 +130,7 @@ class Combobox extends Component {
         type="minute"
         onSelect={this.onItemChange}
         onMouseEnter={this.onEnterSelectPanel.bind(this, 'minute')}
+        open={this.props.open}
       />
     );
   }
@@ -149,6 +153,7 @@ class Combobox extends Component {
         type="second"
         onSelect={this.onItemChange}
         onMouseEnter={this.onEnterSelectPanel.bind(this, 'second')}
+        open={this.props.open}
       />
     );
   }

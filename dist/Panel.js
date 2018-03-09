@@ -185,7 +185,8 @@ var Panel = function (_Component) {
         disabledSeconds: disabledSeconds,
         onCurrentSelectPanelChange: this.onCurrentSelectPanelChange,
         use12Hours: use12Hours,
-        isAM: this.isAM()
+        isAM: this.isAM(),
+        open: this.props.open
       }), addon(this));
     }
   }]);
@@ -206,6 +207,7 @@ Panel.propTypes = {
   disabledMinutes: _propTypes2.default.func,
   disabledSeconds: _propTypes2.default.func,
   hideDisabledOptions: _propTypes2.default.bool,
+  open: _propTypes2.default.bool.isRequired,
   onChange: _propTypes2.default.func,
   onEsc: _propTypes2.default.func,
   allowEmpty: _propTypes2.default.bool,

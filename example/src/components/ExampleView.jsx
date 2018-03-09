@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import '../../../src/styles/timepicker.scss';
 import TimePicker from '../../../src/TimePicker';

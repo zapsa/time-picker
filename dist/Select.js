@@ -47,7 +47,7 @@ var scrollTo = function scrollTo(element, to, duration) {
   var perTick = difference / duration * 10;
 
   requestAnimationFrame(function () {
-    element.scrollTop = element.scrollTop + perTick;
+    element.scrollTop += perTick;
     if (element.scrollTop === to) return;
     scrollTo(element, to, duration - 10);
   });
@@ -97,6 +97,8 @@ var Select = function (_Component) {
       // smooth scroll to selected option
       if (prevProps.selectedIndex !== this.props.selectedIndex) {
         this.scrollToSelected(120);
+      } else if (!prevProps.open && this.props.open) {
+        this.scrollToSelected(10);
       }
     }
   }, {

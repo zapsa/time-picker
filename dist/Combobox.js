@@ -111,6 +111,7 @@ var Combobox = function (_Component) {
           showHour = _props.showHour,
           use12Hours = _props.use12Hours;
 
+
       if (!showHour) {
         return null;
       }
@@ -135,7 +136,8 @@ var Combobox = function (_Component) {
         selectedIndex: hourOptionsAdj.indexOf(hourAdj),
         type: 'hour',
         onSelect: this.onItemChange,
-        onMouseEnter: this.onEnterSelectPanel.bind(this, 'hour')
+        onMouseEnter: this.onEnterSelectPanel.bind(this, 'hour'),
+        open: this.props.open
       });
     }
   }, {
@@ -162,7 +164,8 @@ var Combobox = function (_Component) {
         selectedIndex: minuteOptions.indexOf(minute),
         type: 'minute',
         onSelect: this.onItemChange,
-        onMouseEnter: this.onEnterSelectPanel.bind(this, 'minute')
+        onMouseEnter: this.onEnterSelectPanel.bind(this, 'minute'),
+        open: this.props.open
       });
     }
   }, {
@@ -189,7 +192,8 @@ var Combobox = function (_Component) {
         selectedIndex: secondOptions.indexOf(second),
         type: 'second',
         onSelect: this.onItemChange,
-        onMouseEnter: this.onEnterSelectPanel.bind(this, 'second')
+        onMouseEnter: this.onEnterSelectPanel.bind(this, 'second'),
+        open: this.props.open
       });
     }
   }, {
@@ -246,6 +250,7 @@ Combobox.propTypes = {
   value: _propTypes2.default.object,
   onChange: _propTypes2.default.func,
   showHour: _propTypes2.default.bool,
+  open: _propTypes2.default.bool.isRequired,
   showMinute: _propTypes2.default.bool,
   showSecond: _propTypes2.default.bool,
   hourOptions: _propTypes2.default.array,

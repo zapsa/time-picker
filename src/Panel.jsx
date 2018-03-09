@@ -32,6 +32,7 @@ class Panel extends Component {
     disabledMinutes: PropTypes.func,
     disabledSeconds: PropTypes.func,
     hideDisabledOptions: PropTypes.bool,
+    open: PropTypes.bool.isRequired,
     onChange: PropTypes.func,
     onEsc: PropTypes.func,
     allowEmpty: PropTypes.bool,
@@ -173,6 +174,7 @@ class Panel extends Component {
           onCurrentSelectPanelChange={this.onCurrentSelectPanelChange}
           use12Hours={use12Hours}
           isAM={this.isAM()}
+          open={this.props.open}
         />
         {addon(this)}
       </div>

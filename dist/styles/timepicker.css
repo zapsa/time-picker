@@ -14,8 +14,7 @@
   margin-top: 1px;
   color: 'eee';
   border: 1px solid #f9f9f9;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+  background: #fff; }
 
 .rtpOpen .rtpPicker {
   display: block; }

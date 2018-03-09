@@ -176,7 +176,8 @@ var ZapTimePicker = function (_Component) {
         secondStep: secondStep,
         addon: addon,
         focusOnOpen: focusOnOpen,
-        onKeyDown: onKeyDown
+        onKeyDown: onKeyDown,
+        open: this.state.open
       });
     }
   }, {
@@ -280,7 +281,6 @@ var ZapTimePicker = function (_Component) {
         className: 'form-control ' + this.props.inputClassName,
         ref: this.saveInputRef,
         type: 'text',
-        placeholder: placeholder,
         name: name,
         onKeyDown: this.onKeyDown,
         disabled: disabled,

@@ -207,6 +207,7 @@ class ZapTimePicker extends Component {
         addon={addon}
         focusOnOpen={focusOnOpen}
         onKeyDown={onKeyDown}
+        open={this.state.open}
       />
     );
   }
@@ -280,7 +281,6 @@ class ZapTimePicker extends Component {
           className={`form-control ${this.props.inputClassName}`}
           ref={this.saveInputRef}
           type="text"
-          placeholder={placeholder}
           name={name}
           onKeyDown={this.onKeyDown}
           disabled={disabled}
