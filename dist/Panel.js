@@ -168,28 +168,7 @@ var Panel = function (_Component) {
 
       return _jsx('div', {
         className: (0, _classnames2.default)((_classNames = {}, _defineProperty(_classNames, prefixCls + '-inner', true), _defineProperty(_classNames, className, !!className), _classNames))
-      }, void 0, _jsx(_Header2.default, {
-        clearText: clearText,
-        prefixCls: prefixCls,
-        defaultOpenValue: defaultOpenValue,
-        value: value,
-        currentSelectPanel: currentSelectPanel,
-        onEsc: onEsc,
-        format: format,
-        placeholder: placeholder,
-        hourOptions: hourOptions,
-        minuteOptions: minuteOptions,
-        secondOptions: secondOptions,
-        disabledHours: this.disabledHours,
-        disabledMinutes: disabledMinutes,
-        disabledSeconds: disabledSeconds,
-        onChange: this.onChange,
-        onClear: onClear,
-        allowEmpty: allowEmpty,
-        focusOnOpen: focusOnOpen,
-        onKeyDown: onKeyDown,
-        inputReadOnly: inputReadOnly
-      }), _jsx(_Combobox2.default, {
+      }, void 0, _jsx(_Combobox2.default, {
         prefixCls: prefixCls,
         value: value,
         defaultOpenValue: defaultOpenValue,

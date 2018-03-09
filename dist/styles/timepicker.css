@@ -20,6 +20,28 @@
 .rtpOpen .rtpPicker {
   display: block; }
 
+.rtpClear {
+  line-height: 1;
+  position: absolute;
+  top: 16px;
+  right: 8px;
+  padding: 0;
+  cursor: pointer;
+  border: 0;
+  outline-width: 0; }
+  .rtpClear:hover .zap-icon svg polygon,
+  .rtpClear:hover .zap-icon svg path {
+    fill: #9c9ea1; }
+  .rtpClear .zap-icon {
+    width: 16px;
+    height: 16px; }
+    .rtpClear .zap-icon svg {
+      width: 16px;
+      height: 16px; }
+      .rtpClear .zap-icon svg polygon,
+      .rtpClear .zap-icon svg path {
+        fill: #b9bbbd; }
+
 .rc-time-picker-panel {
   position: absolute;
   z-index: 1070;

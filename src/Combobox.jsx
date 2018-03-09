@@ -80,7 +80,9 @@ class Combobox extends Component {
   }
 
   getHourSelect(hour) {
-    const { prefixCls, hourOptions, disabledHours, showHour, use12Hours } = this.props;
+    const {
+      prefixCls, hourOptions, disabledHours, showHour, use12Hours,
+    } = this.props;
     if (!showHour) {
       return null;
     }
@@ -108,7 +110,9 @@ class Combobox extends Component {
   }
 
   getMinuteSelect(minute) {
-    const { prefixCls, minuteOptions, disabledMinutes, defaultOpenValue, showMinute } = this.props;
+    const {
+      prefixCls, minuteOptions, disabledMinutes, defaultOpenValue, showMinute,
+    } = this.props;
     if (!showMinute) {
       return null;
     }
@@ -128,7 +132,9 @@ class Combobox extends Component {
   }
 
   getSecondSelect(second) {
-    const { prefixCls, secondOptions, disabledSeconds, showSecond, defaultOpenValue } = this.props;
+    const {
+      prefixCls, secondOptions, disabledSeconds, showSecond, defaultOpenValue,
+    } = this.props;
     if (!showSecond) {
       return null;
     }
@@ -154,8 +160,8 @@ class Combobox extends Component {
     }
 
     const AMPMOptions = ['am', 'pm'] // If format has A char, then we should uppercase AM/PM
-                          .map(c => format.match(/\sA/) ? c.toUpperCase() : c)
-                          .map(c => ({ value: c }));
+      .map(c => (format.match(/\sA/) ? c.toUpperCase() : c))
+      .map(c => ({ value: c }));
 
     const selected = this.props.isAM ? 0 : 1;
 

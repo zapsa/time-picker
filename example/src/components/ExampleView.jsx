@@ -18,6 +18,7 @@ class ExampleView extends Component {
         Coucou !
         <TimePicker
           placeholder="Input placeholder"
+          showSecond={false}
         />
       </div>
     );

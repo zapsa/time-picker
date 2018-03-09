@@ -22,6 +22,10 @@ var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
 
+var _zapIcons = require('@zapsa/zap-icons');
+
+var _zapIcons2 = _interopRequireDefault(_zapIcons);
+
 var _reactOnclickoutside = require('react-onclickoutside');
 
 var _reactOnclickoutside2 = _interopRequireDefault(_reactOnclickoutside);
@@ -281,7 +285,8 @@ var ZapTimePicker = function (_Component) {
         onKeyDown: this.onKeyDown,
         disabled: disabled,
         value: value && value.format(this.getFormat()) || '',
-        autoComplete: autoComplete,
+        autoComplete: autoComplete
+      }, this.props.inputProps, {
         onFocus: function onFocus() {
           _this3.setState({ open: true }, function () {
             _this3.props.onFocus();
@@ -289,14 +294,26 @@ var ZapTimePicker = function (_Component) {
           if (_this3.props.inputProps.onFocus) {
             _this3.props.inputProps.onFocus();
           }
-        }
-      }, this.props.inputProps, {
+        },
         autoFocus: autoFocus,
         onChange: noop,
         readOnly: !!inputReadOnly
       })), _jsx('label', {
         className: 'form-control-label'
-      }, void 0, placeholder), this.props.children, _jsx('div', {
+      }, void 0, placeholder), this.props.children, _jsx('button', {
+        onClick: function onClick(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          _this3.setState({
+            value: null,
+            open: false
+          });
+          _this3.props.onChange(null);
+        },
+        className: 'rtpClear'
+      }, void 0, _jsx(_zapIcons2.default, {
+        icon: 'errorCircle--solid'
+      })), _jsx('div', {
         className: 'rtpWrapper'
       }, void 0, _jsx('div', {
         className: 'rtpPicker'
