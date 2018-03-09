@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -16,21 +18,17 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _rcTrigger = require('rc-trigger');
-
-var _rcTrigger2 = _interopRequireDefault(_rcTrigger);
-
 var _Panel = require('./Panel');
 
 var _Panel2 = _interopRequireDefault(_Panel);
 
-var _placements = require('./placements');
-
-var _placements2 = _interopRequireDefault(_placements);
-
 var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
+
+var _reactOnclickoutside = require('react-onclickoutside');
+
+var _reactOnclickoutside2 = _interopRequireDefault(_reactOnclickoutside);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39,6 +37,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import Trigger from 'rc-trigger';
+
+// import placements from './placements';
+
 
 function noop() {}
 
@@ -237,8 +239,21 @@ var ZapTimePicker = function (_Component) {
       this.picker.blur();
     }
   }, {
+    key: 'handleClickOutside',
+    value: function handleClickOutside(evt) {
+      var _this2 = this;
+
+      if (this.state.open && !this.props.open) {
+        this.setState({ open: false }, function () {
+          _this2.props.onBlur(_this2.state.value);
+        });
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var _props5 = this.props,
           prefixCls = _props5.prefixCls,
           placeholder = _props5.placeholder,
@@ -252,31 +267,16 @@ var ZapTimePicker = function (_Component) {
           name = _props5.name,
           autoComplete = _props5.autoComplete,
           onFocus = _props5.onFocus,
-          onBlur = _props5.onBlur,
           autoFocus = _props5.autoFocus,
           inputReadOnly = _props5.inputReadOnly;
       var _state = this.state,
           open = _state.open,
           value = _state.value;
 
-      var popupClassName = this.getPopupClassName();
-      return _jsx(_rcTrigger2.default, {
-        prefixCls: prefixCls + '-panel',
-        popupClassName: popupClassName,
-        popup: this.getPanelElement(),
-        popupAlign: align,
-        builtinPlacements: _placements2.default,
-        popupPlacement: placement,
-        action: disabled ? [] : ['click'],
-        destroyPopupOnHide: true,
-        getPopupContainer: getPopupContainer,
-        popupTransitionName: transitionName,
-        popupVisible: open,
-        onPopupVisibleChange: this.onVisibleChange
-      }, void 0, _jsx('div', {
-        className: 'form-group ' + prefixCls + ' ' + className,
+      return _jsx('div', {
+        className: 'form-group rtp ' + (open ? 'rtpOpen' : ''),
         style: style
-      }, void 0, _react2.default.createElement('input', {
+      }, void 0, _react2.default.createElement('input', _extends({
         className: 'form-control',
         ref: this.saveInputRef,
         type: 'text',
@@ -286,16 +286,23 @@ var ZapTimePicker = function (_Component) {
         disabled: disabled,
         value: value && value.format(this.getFormat()) || '',
         autoComplete: autoComplete,
-        onFocus: onFocus,
-        onBlur: onBlur,
+        onFocus: function onFocus() {
+          _this3.setState({ open: true }, function () {
+            _this3.props.onFocus();
+          });
+          if (_this3.props.inputProps.onFocus) {
+            _this3.props.inputProps.onFocus();
+          }
+        }
+      }, this.props.inputProps, {
         autoFocus: autoFocus,
         onChange: noop,
         readOnly: !!inputReadOnly
-      }), _jsx('label', {
+      })), _jsx('label', {
         className: 'form-control-label'
-      }, void 0, placeholder), this.props.children, _jsx('span', {
-        className: prefixCls + '-icon'
-      })));
+      }, void 0, placeholder), this.props.children, _jsx('div', {
+        className: 'rtpPicker'
+      }, void 0, this.getPanelElement()));
     }
   }]);
 
@@ -304,6 +311,7 @@ var ZapTimePicker = function (_Component) {
 
 ZapTimePicker.propTypes = {
   prefixCls: _propTypes2.default.string,
+  inputProps: _propTypes2.default.shape(),
   clearText: _propTypes2.default.string,
   value: _propTypes2.default.object,
   defaultOpenValue: _propTypes2.default.object,
@@ -372,35 +380,36 @@ ZapTimePicker.defaultProps = {
   addon: noop,
   use12Hours: false,
   focusOnOpen: false,
-  onKeyDown: noop
+  onKeyDown: noop,
+  inputProps: {}
 };
 
 var _initialiseProps = function _initialiseProps() {
-  var _this2 = this;
+  var _this4 = this;
 
   this.onPanelChange = function (value) {
-    _this2.setValue(value);
+    _this4.setValue(value);
   };
 
   this.onPanelClear = function () {
-    _this2.setValue(null);
-    _this2.setOpen(false);
+    _this4.setValue(null);
+    _this4.setOpen(false);
   };
 
   this.onVisibleChange = function (open) {
-    _this2.setOpen(open);
+    _this4.setOpen(open);
   };
 
   this.onEsc = function () {
-    _this2.setOpen(false);
-    _this2.focus();
+    _this4.setOpen(false);
+    _this4.focus();
   };
 
   this.onKeyDown = function (e) {
     if (e.keyCode === 40) {
-      _this2.setOpen(true);
+      _this4.setOpen(true);
     }
   };
 };
 
-exports.default = ZapTimePicker;
+exports.default = (0, _reactOnclickoutside2.default)(ZapTimePicker);

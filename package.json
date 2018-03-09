@@ -18,8 +18,8 @@
   "dependencies": {
     "@zapsa/zap-styles": "^1.1.31",
     "moment": "2.18.1",
-    "rc-trigger": "^2.2.0",
     "classnames": "2.x",
+    "react-onclickoutside": "^6.7.1",
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {

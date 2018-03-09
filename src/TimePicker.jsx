@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Trigger from 'rc-trigger';
+// import Trigger from 'rc-trigger';
 import Panel from './Panel';
-import placements from './placements';
+// import placements from './placements';
 import moment from 'moment';
+import onClickOutside from 'react-onclickoutside';
 
 function noop() {
 }
@@ -15,6 +16,7 @@ function refFn(field, component) {
 class ZapTimePicker extends Component {
   static propTypes = {
     prefixCls: PropTypes.string,
+    inputProps: PropTypes.shape(),
     clearText: PropTypes.string,
     value: PropTypes.object,
     defaultOpenValue: PropTypes.object,
@@ -85,6 +87,7 @@ class ZapTimePicker extends Component {
     use12Hours: false,
     focusOnOpen: false,
     onKeyDown: noop,
+    inputProps: {},
   };
 
   constructor(props) {
@@ -257,54 +260,55 @@ class ZapTimePicker extends Component {
     this.picker.blur();
   }
 
+  handleClickOutside(evt) {
+    if (this.state.open && !this.props.open) {
+      this.setState({ open: false }, () => {
+        this.props.onBlur(this.state.value);
+      });
+    }
+  }
+
   render() {
     const {
       prefixCls, placeholder, placement, align,
       disabled, transitionName, style, className, getPopupContainer, name, autoComplete,
-      onFocus, onBlur, autoFocus, inputReadOnly,
+      onFocus, autoFocus, inputReadOnly,
     } = this.props;
     const { open, value } = this.state;
-    const popupClassName = this.getPopupClassName();
     return (
-      <Trigger
-        prefixCls={`${prefixCls}-panel`}
-        popupClassName={popupClassName}
-        popup={this.getPanelElement()}
-        popupAlign={align}
-        builtinPlacements={placements}
-        popupPlacement={placement}
-        action={disabled ? [] : ['click']}
-        destroyPopupOnHide
-        getPopupContainer={getPopupContainer}
-        popupTransitionName={transitionName}
-        popupVisible={open}
-        onPopupVisibleChange={this.onVisibleChange}
-      >
-        <div className={`form-group ${prefixCls} ${className}`} style={style}>
-          <input
-            className="form-control"
-            ref={this.saveInputRef}
-            type="text"
-            placeholder={placeholder}
-            name={name}
-            onKeyDown={this.onKeyDown}
-            disabled={disabled}
-            value={value && value.format(this.getFormat()) || ''}
-            autoComplete={autoComplete}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            autoFocus={autoFocus}
-            onChange={noop}
-            readOnly={!!inputReadOnly}
-          />
-          <label className="form-control-label">{placeholder}</label>
-          {this.props.children}
-          <span className={`${prefixCls}-icon`} />
+      <div className={`form-group rtp ${open ? 'rtpOpen' : ''}`} style={style}>
+        <input
+          className="form-control"
+          ref={this.saveInputRef}
+          type="text"
+          placeholder={placeholder}
+          name={name}
+          onKeyDown={this.onKeyDown}
+          disabled={disabled}
+          value={value && value.format(this.getFormat()) || ''}
+          autoComplete={autoComplete}
+          onFocus={() => {
+            this.setState({ open: true }, () => {
+              this.props.onFocus();
+            });
+            if (this.props.inputProps.onFocus) {
+              this.props.inputProps.onFocus();
+            }
+          }}
+          {...this.props.inputProps}
+          autoFocus={autoFocus}
+          onChange={noop}
+          readOnly={!!inputReadOnly}
+        />
+        <label className="form-control-label">{placeholder}</label>
+        {this.props.children}
+        <div className="rtpPicker">
+          {this.getPanelElement()}
         </div>
-      </Trigger>
+      </div>
     );
   }
 }
 
 
-export default ZapTimePicker;
+export default onClickOutside(ZapTimePicker);
