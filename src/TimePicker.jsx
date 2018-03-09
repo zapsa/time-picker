@@ -12,7 +12,7 @@ function refFn(field, component) {
   this[field] = component;
 }
 
-export default class Picker extends Component {
+class TimePicker extends Component {
   static propTypes = {
     prefixCls: PropTypes.string,
     clearText: PropTypes.string,
@@ -305,3 +305,6 @@ export default class Picker extends Component {
     );
   }
 }
+
+
+export default TimePicker;

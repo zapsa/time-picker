@@ -46,13 +46,13 @@ function refFn(field, component) {
   this[field] = component;
 }
 
-var Picker = function (_Component) {
-  _inherits(Picker, _Component);
+var TimePicker = function (_Component) {
+  _inherits(TimePicker, _Component);
 
-  function Picker(props) {
-    _classCallCheck(this, Picker);
+  function TimePicker(props) {
+    _classCallCheck(this, TimePicker);
 
-    var _this = _possibleConstructorReturn(this, (Picker.__proto__ || Object.getPrototypeOf(Picker)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (TimePicker.__proto__ || Object.getPrototypeOf(TimePicker)).call(this, props));
 
     _initialiseProps.call(_this);
 
@@ -72,7 +72,7 @@ var Picker = function (_Component) {
     return _this;
   }
 
-  _createClass(Picker, [{
+  _createClass(TimePicker, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       var value = nextProps.value,
@@ -299,10 +299,10 @@ var Picker = function (_Component) {
     }
   }]);
 
-  return Picker;
+  return TimePicker;
 }(_react.Component);
 
-Picker.propTypes = {
+TimePicker.propTypes = {
   prefixCls: _propTypes2.default.string,
   clearText: _propTypes2.default.string,
   value: _propTypes2.default.object,
@@ -345,7 +345,7 @@ Picker.propTypes = {
   onKeyDown: _propTypes2.default.func,
   autoFocus: _propTypes2.default.bool
 };
-Picker.defaultProps = {
+TimePicker.defaultProps = {
   clearText: 'clear',
   prefixCls: 'rc-time-picker',
   defaultOpen: false,
@@ -403,4 +403,4 @@ var _initialiseProps = function _initialiseProps() {
   };
 };
 
-exports.default = Picker;
+exports.default = TimePicker;
