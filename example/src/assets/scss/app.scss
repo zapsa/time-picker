@@ -1,0 +1,90 @@
+@charset 'utf-8';
+
+@import '~normalize.css';
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+
+// Core
+//
+@import 'core';
+
+// Client branding
+//
+@import 'client-branding';
+
+// Layout
+//
+@import 'layout/views/feed';
+@import 'layout/views/grid';
+@import 'layout/views/list';
+@import 'layout/actionbar';
+@import 'layout/content';
+@import 'layout/main';
+@import 'layout/navbar';
+@import 'layout/navigation';
+@import 'layout/sidebar';
+
+
+// Modules
+//
+@import 'modules/announcements';
+@import 'modules/dashboard';
+@import 'modules/login';
+@import 'modules/messages';
+@import 'modules/mustread';
+@import 'modules/notifications';
+@import 'modules/pages';
+@import 'modules/square-settings';
+@import 'modules/squares';
+@import 'modules/team';
+@import 'modules/user';
+
+// Components
+//
+@import 'components/alert';
+@import 'components/breadcrumb';
+@import 'components/buttons';
+@import 'components/comments';
+@import 'components/cropper';
+// @import 'components/datepicker';
+@import 'components/dropdown';
+@import 'components/dropzone';
+@import 'components/eventBadge';
+@import 'components/headings';
+@import 'components/helpers';
+@import 'components/forms';
+@import 'components/gmaps';
+@import 'components/icons';
+@import 'components/keywords';
+@import 'components/label';
+@import 'components/mediaManager';
+@import 'components/modal';
+@import 'components/multiselect';
+@import 'components/pagination';
+@import 'components/select';
+@import 'components/markAsReadBar';
+@import 'components/signup';
+@import 'components/social';
+@import 'components/tabs';
+@import 'components/toggle';
+@import 'components/toolbar';
+@import 'components/typography';
+@import 'components/zapeditor'; //overwrites the vendor files
+
+// Public
+//
+@import 'public/signup';
+
+
+// TMP files
+//
+@import 'components/events'; // TMP, only Backup, no impact
+@import 'components/tmp'; // Tmp style for DateTime Picker
+
+// TMP as backup
+/*
+[data-reactroot] {
+  display: flex;
+}
+*/

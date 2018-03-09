@@ -291,6 +291,7 @@ export default class Picker extends Component {
             onChange={noop}
             readOnly={!!inputReadOnly}
           />
+          <label className="form-control-label">{placeholder}</label>
           <span className={`${prefixCls}-icon`}/>
         </span>
       </Trigger>

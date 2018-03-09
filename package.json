@@ -1,71 +1,70 @@
 {
-  "name": "rc-time-picker",
+  "name": "@zapsa/zap-time-picker",
   "version": "3.3.1",
-  "description": "React TimePicker",
-  "keywords": [
-    "react",
-    "react-time-picker",
-    "react-component",
-    "timepicker",
-    "time-picker",
-    "ui component",
-    "ui",
-    "component"
-  ],
-  "files": [
-    "lib",
-    "es",
-    "assets/*.css"
-  ],
-  "main": "lib/index",
-  "module": "es/index",
-  "homepage": "http://github.com/react-component/time-picker",
-  "author": "wuzhao.mail@gmail.com",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:react-component/time-picker.git"
-  },
-  "bugs": {
-    "url": "http://github.com/react-component/time-picker/issues"
-  },
-  "licenses": "MIT",
-  "config": {
-    "port": 8011
-  },
+  "description": "Zap datepicker",
+  "main": "./dist/",
   "scripts": {
-    "dist": "rc-tools run dist",
-    "build": "rc-tools run build",
-    "gh-pages": "rc-tools run gh-pages",
-    "start": "rc-tools run server",
-    "compile": "rc-tools run compile --babel-runtime",
-    "pub": "rc-tools run pub --babel-runtime",
-    "lint": "rc-tools run lint",
-    "lint:fix": "rc-tools run lint --fix",
-    "karma": "rc-test run karma",
-    "saucelabs": "rc-test run saucelabs",
-    "test": "rc-test run test",
-    "chrome-test": "rc-test run chrome-test",
-    "coverage": "rc-test run coverage"
+    "start": "webpack-dev-server --config webpack.config.dev.babel.js --port 9292",
+    "build-css": "node-sass --include-path ./node_modules/@zapsa src -o dist",
+    "build": "rimraf dist && babel src -d dist && npm run build-css",
+    "prepare": "npm run build",
+    "publish": "zap-slack-nodetifications @zapsa/zap-datetime $npm_package_version",
+    "lint": "npm run lint:src && npm run lint:webpack",
+    "lint:src": "eslint \"./src/**\"; exit 0",
+    "lint:webpack": "eslint \"./webpack/**\"; exit 0"
+  },
+  "dependencies": {
+    "@zapsa/zap-icons": "^1.5.6",
+    "@zapsa/zap-styles": "^1.1.31",
+    "moment": "2.18.1",
+    "prop-types": "^15.5.10",
+    "react-onclickoutside": "^6.7.1"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "async": "~0.9.0",
-    "core-js": "^2.5.1",
-    "expect.js": "~0.3.1",
-    "pre-commit": "1.x",
-    "rc-test": "^6.0.1",
-    "rc-tools": "6.x",
-    "rc-util": "^4.0.2",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
-  "pre-commit": [
-    "lint"
-  ],
-  "dependencies": {
-    "babel-runtime": "6.x",
+    "@zapsa/zap-slack-nodetifications": "0.0.7",
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.0",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "babel-plugin-transform-react-inline-elements": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
     "classnames": "2.x",
+    "css-loader": "^0.28.9",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.1.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.29.0",
+    "node-sass": "^4.5.3",
+    "normalize.css": "^7.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-form": "^7.2.1",
+    "redux-thunk": "^2.2.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "babel-runtime": "6.x",
     "moment": "2.x",
-    "prop-types": "^15.5.8",
-    "rc-trigger": "^2.2.0"
-  }
+    "rc-trigger": "^2.2.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "author": "Quentin Hausser"
 }

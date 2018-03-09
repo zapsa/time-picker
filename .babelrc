@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    "transform-react-inline-elements",
+  ],
+  "presets": [
+    "env", [
+      "latest",
+      {
+        "es2015": {
+          "modules": false,
+        },
+      },
+    ],
+    "react",
+    "stage-0",
+  ],
+}
