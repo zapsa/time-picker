@@ -1,11 +1,9 @@
-.rc-time-picker {
-  display: inline-block;
-  box-sizing: border-box; }
-  .rc-time-picker * {
-    box-sizing: border-box; }
-
 .rtp {
-  position: relative; }
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+  .rtp .form-control-label {
+    order: -1; }
 
 .rtpPicker {
   position: absolute;
@@ -18,11 +16,8 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
 
 .rtpOpen .rtpPicker {
-  display: block; }
-
-.rc-time-picker {
-  display: flex;
-  flex-direction: column-reverse; }
+  display: block;
+  margin-top: 80px; }
 
 .rc-time-picker-panel {
   position: absolute;
