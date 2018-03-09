@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import Trigger from 'rc-trigger';
-import Panel from './Panel';
-// import placements from './placements';
 import moment from 'moment';
 import onClickOutside from 'react-onclickoutside';
+import Panel from './Panel';
 
 function noop() {
 }
