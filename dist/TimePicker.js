@@ -273,11 +273,11 @@ var ZapTimePicker = function (_Component) {
         popupTransitionName: transitionName,
         popupVisible: open,
         onPopupVisibleChange: this.onVisibleChange
-      }, void 0, _jsx('span', {
-        className: prefixCls + ' ' + className,
+      }, void 0, _jsx('div', {
+        className: 'form-group ' + prefixCls + ' ' + className,
         style: style
       }, void 0, _react2.default.createElement('input', {
-        className: prefixCls + '-input',
+        className: 'form-control',
         ref: this.saveInputRef,
         type: 'text',
         placeholder: placeholder,

@@ -280,9 +280,9 @@ class ZapTimePicker extends Component {
         popupVisible={open}
         onPopupVisibleChange={this.onVisibleChange}
       >
-        <span className={`${prefixCls} ${className}`} style={style}>
+        <div className={`form-group ${prefixCls} ${className}`} style={style}>
           <input
-            className={`${prefixCls}-input`}
+            className="form-control"
             ref={this.saveInputRef}
             type="text"
             placeholder={placeholder}
@@ -300,7 +300,7 @@ class ZapTimePicker extends Component {
           <label className="form-control-label">{placeholder}</label>
           {this.props.children}
           <span className={`${prefixCls}-icon`} />
-        </span>
+        </div>
       </Trigger>
     );
   }
