@@ -301,8 +301,10 @@ var ZapTimePicker = function (_Component) {
       })), _jsx('label', {
         className: 'form-control-label'
       }, void 0, placeholder), this.props.children, _jsx('div', {
+        className: 'rtpWrapper'
+      }, void 0, _jsx('div', {
         className: 'rtpPicker'
-      }, void 0, this.getPanelElement()));
+      }, void 0, this.getPanelElement())));
     }
   }]);
 

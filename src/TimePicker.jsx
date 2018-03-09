@@ -302,8 +302,10 @@ class ZapTimePicker extends Component {
         />
         <label className="form-control-label">{placeholder}</label>
         {this.props.children}
-        <div className="rtpPicker">
-          {this.getPanelElement()}
+        <div className="rtpWrapper">
+          <div className="rtpPicker">
+            {this.getPanelElement()}
+          </div>
         </div>
       </div>
     );

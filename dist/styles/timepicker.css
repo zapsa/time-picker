@@ -1,9 +1,11 @@
 .rtp {
-  position: relative;
   display: flex;
   flex-direction: column; }
   .rtp .form-control-label {
     order: -1; }
+
+.rtpWrapper {
+  position: relative; }
 
 .rtpPicker {
   position: absolute;
@@ -16,8 +18,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
 
 .rtpOpen .rtpPicker {
-  display: block;
-  margin-top: 80px; }
+  display: block; }
 
 .rc-time-picker-panel {
   position: absolute;

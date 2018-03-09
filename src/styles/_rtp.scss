@@ -1,7 +1,6 @@
 .rtp
 {
-    position: relative;
-
+    // position: relative;
     display: flex;
     flex-direction: column;
 
@@ -9,6 +8,11 @@
     {
         order: -1;
     }
+}
+
+.rtpWrapper
+{
+    position: relative;
 }
 
 .rtpPicker
@@ -30,6 +34,4 @@
 .rtpOpen .rtpPicker
 {
     display: block;
-
-    margin-top: 80px;
 }
