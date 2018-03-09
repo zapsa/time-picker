@@ -1,3 +1,3 @@
-import './styles/datepicker.css'; // eslint-disable-line
+import './styles/timepicker.css'; // eslint-disable-line
 
 export ZapTimePicker from './TimePicker';

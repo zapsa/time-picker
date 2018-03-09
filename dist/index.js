@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ZapTimePicker = undefined;
 
-require('./styles/datepicker.css');
+require('./styles/timepicker.css');
 
 var _TimePicker = require('./TimePicker');
 
