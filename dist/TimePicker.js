@@ -357,14 +357,13 @@ ZapTimePicker.propTypes = {
   secondStep: _propTypes2.default.number,
   focusOnOpen: _propTypes2.default.bool,
   onKeyDown: _propTypes2.default.func,
-  children: _propTypes2.default.func,
+  children: _propTypes2.default.node,
   autoFocus: _propTypes2.default.bool
 };
 ZapTimePicker.defaultProps = {
   key: 'rcTimePicker',
   clearText: 'clear',
   prefixCls: 'rc-time-picker',
-  children: null,
   disabled: false,
   defaultOpen: false,
   autoFocus: false,

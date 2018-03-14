@@ -50,7 +50,7 @@ class ZapTimePicker extends Component {
     secondStep: PropTypes.number,
     focusOnOpen: PropTypes.bool,
     onKeyDown: PropTypes.func,
-    children: PropTypes.func,
+    children: PropTypes.node,
     autoFocus: PropTypes.bool,
   };
 
@@ -58,7 +58,6 @@ class ZapTimePicker extends Component {
     key: 'rcTimePicker',
     clearText: 'clear',
     prefixCls: 'rc-time-picker',
-    children: null,
     disabled: false,
     defaultOpen: false,
     autoFocus: false,
