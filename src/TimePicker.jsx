@@ -5,9 +5,6 @@ import ZapIcon from '@zapsa/zap-icons';
 import onClickOutside from 'react-onclickoutside';
 import Panel from './Panel';
 
-function noop() {
-}
-
 function refFn(field, component) {
   this[field] = component;
 }
@@ -16,7 +13,9 @@ class ZapTimePicker extends Component {
   static propTypes = {
     prefixCls: PropTypes.string,
     inputProps: PropTypes.shape(),
+    inputClassName: PropTypes.string,
     clearText: PropTypes.string,
+    key: PropTypes.string,
     value: PropTypes.object,
     defaultOpenValue: PropTypes.object,
     inputReadOnly: PropTypes.bool,
@@ -25,10 +24,6 @@ class ZapTimePicker extends Component {
     defaultValue: PropTypes.object,
     open: PropTypes.bool,
     defaultOpen: PropTypes.bool,
-    align: PropTypes.object,
-    placement: PropTypes.any,
-    transitionName: PropTypes.string,
-    getPopupContainer: PropTypes.func,
     placeholder: PropTypes.string,
     format: PropTypes.string,
     showHour: PropTypes.bool,
@@ -55,37 +50,41 @@ class ZapTimePicker extends Component {
     secondStep: PropTypes.number,
     focusOnOpen: PropTypes.bool,
     onKeyDown: PropTypes.func,
+    children: PropTypes.func,
     autoFocus: PropTypes.bool,
   };
 
   static defaultProps = {
+    key: 'rcTimePicker',
     clearText: 'clear',
     prefixCls: 'rc-time-picker',
+    children: null,
+    disabled: false,
     defaultOpen: false,
+    autoFocus: false,
     inputReadOnly: false,
     style: {},
     className: '',
     popupClassName: '',
-    align: {},
+    inputClassName: null,
     defaultOpenValue: moment(),
     allowEmpty: true,
     showHour: true,
     showMinute: true,
     showSecond: true,
-    disabledHours: noop,
-    disabledMinutes: noop,
-    disabledSeconds: noop,
+    disabledHours: () => {},
+    disabledMinutes: () => {},
+    disabledSeconds: () => {},
     hideDisabledOptions: false,
-    placement: 'bottomLeft',
-    onChange: noop,
-    onOpen: noop,
-    onClose: noop,
-    onFocus: noop,
-    onBlur: noop,
-    addon: noop,
+    onChange: () => {},
+    onOpen: () => {},
+    onClose: () => {},
+    onFocus: () => {},
+    onBlur: () => {},
+    addon: () => {},
     use12Hours: false,
     focusOnOpen: false,
-    onKeyDown: noop,
+    onKeyDown: () => {},
     inputProps: {},
   };
 
@@ -116,27 +115,27 @@ class ZapTimePicker extends Component {
 
   onPanelChange = (value) => {
     this.setValue(value);
-  }
+  };
 
   onPanelClear = () => {
     this.setValue(null);
     this.setOpen(false);
-  }
+  };
 
   onVisibleChange = (open) => {
     this.setOpen(open);
-  }
+  };
 
   onEsc = () => {
     this.setOpen(false);
     this.focus();
-  }
+  };
 
   onKeyDown = (e) => {
     if (e.keyCode === 40) {
       this.setOpen(true);
     }
-  }
+  };
 
   setValue(value) {
     if (!('value' in this.props)) {
@@ -156,28 +155,40 @@ class ZapTimePicker extends Component {
     }
 
     if (use12Hours) {
-      const fmtString = ([
-        showHour ? 'h' : '',
-        showMinute ? 'mm' : '',
-        showSecond ? 'ss' : '',
-      ].filter(item => !!item).join(':'));
+      const fmtString = [showHour ? 'h' : '', showMinute ? 'mm' : '', showSecond ? 'ss' : '']
+        .filter(item => !!item)
+        .join(':');
 
       return fmtString.concat(' a');
     }
 
-    return [
-      showHour ? 'HH' : '',
-      showMinute ? 'mm' : '',
-      showSecond ? 'ss' : '',
-    ].filter(item => !!item).join(':');
+    return [showHour ? 'HH' : '', showMinute ? 'mm' : '', showSecond ? 'ss' : '']
+      .filter(item => !!item)
+      .join(':');
   }
 
   getPanelElement() {
     const {
-      prefixCls, placeholder, disabledHours,
-      disabledMinutes, disabledSeconds, hideDisabledOptions, inputReadOnly,
-      allowEmpty, showHour, showMinute, showSecond, defaultOpenValue, clearText,
-      addon, use12Hours, focusOnOpen, onKeyDown, hourStep, minuteStep, secondStep,
+      prefixCls,
+      placeholder,
+      disabledHours,
+      disabledMinutes,
+      disabledSeconds,
+      hideDisabledOptions,
+      inputReadOnly,
+      allowEmpty,
+      showHour,
+      showMinute,
+      showSecond,
+      defaultOpenValue,
+      clearText,
+      addon,
+      use12Hours,
+      focusOnOpen,
+      onKeyDown,
+      hourStep,
+      minuteStep,
+      secondStep,
     } = this.props;
     return (
       <Panel
@@ -217,7 +228,6 @@ class ZapTimePicker extends Component {
       showHour, showMinute, showSecond, use12Hours, prefixCls,
     } = this.props;
     let popupClassName = this.props.popupClassName;
-    // Keep it for old compatibility
     if ((!showHour || !showMinute || !showSecond) && !use12Hours) {
       popupClassName += ` ${prefixCls}-panel-narrow`;
     }
@@ -270,21 +280,34 @@ class ZapTimePicker extends Component {
 
   render() {
     const {
-      prefixCls, placeholder, placement, align,
-      disabled, transitionName, style, className, getPopupContainer, name, autoComplete,
-      onFocus, autoFocus, inputReadOnly,
+      placeholder,
+      disabled,
+      style,
+      className,
+      name,
+      autoComplete,
+      autoFocus,
+      inputReadOnly,
+      key,
     } = this.props;
     const { open, value } = this.state;
     return (
-      <div className={`form-group rtp ${open ? 'rtpOpen' : ''}`} style={style}>
+      <div
+        className={`form-group rtp${open ? ' rtpOpen' : ''}${className ? ` ${className}` : ''}`}
+        style={style}
+        key={key}
+      >
         <input
-          className={`form-control ${this.props.inputClassName}`}
+          className={`form-control${
+            this.props.inputClassName ? ` ${this.props.inputClassName}` : ''
+          }`}
           ref={this.saveInputRef}
           type="text"
           name={name}
+          key={`${key}Input`}
           onKeyDown={this.onKeyDown}
           disabled={disabled}
-          value={value && value.format(this.getFormat()) || ''}
+          value={(value && value.format(this.getFormat())) || ''}
           autoComplete={autoComplete}
           {...this.props.inputProps}
           onFocus={() => {
@@ -296,12 +319,13 @@ class ZapTimePicker extends Component {
             }
           }}
           autoFocus={autoFocus}
-          onChange={noop}
+          onChange={() => {}}
           readOnly={!!inputReadOnly}
         />
         <label className="form-control-label">{placeholder}</label>
         {this.props.children}
         <button
+          key={`${key}ClearButton`}
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -312,17 +336,15 @@ class ZapTimePicker extends Component {
             this.props.onChange(null);
           }}
           className="rtpClear"
-        ><ZapIcon icon="errorCircle--solid" />
+        >
+          <ZapIcon icon="errorCircle--solid" />
         </button>
-        <div className="rtpWrapper">
-          <div className="rtpPicker">
-            {this.getPanelElement()}
-          </div>
+        <div className="rtpWrapper" key={`${key}Wrapper`}>
+          <div className="rtpPicker">{this.getPanelElement()}</div>
         </div>
       </div>
     );
   }
 }
-
 
 export default onClickOutside(ZapTimePicker);

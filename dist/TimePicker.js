@@ -42,8 +42,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function noop() {}
-
 function refFn(field, component) {
   this[field] = component;
 }
@@ -191,7 +189,6 @@ var ZapTimePicker = function (_Component) {
           prefixCls = _props3.prefixCls;
 
       var popupClassName = this.props.popupClassName;
-      // Keep it for old compatibility
       if ((!showHour || !showMinute || !showSecond) && !use12Hours) {
         popupClassName += ' ' + prefixCls + '-panel-narrow';
       }
@@ -256,32 +253,28 @@ var ZapTimePicker = function (_Component) {
       var _this3 = this;
 
       var _props5 = this.props,
-          prefixCls = _props5.prefixCls,
           placeholder = _props5.placeholder,
-          placement = _props5.placement,
-          align = _props5.align,
           disabled = _props5.disabled,
-          transitionName = _props5.transitionName,
           style = _props5.style,
           className = _props5.className,
-          getPopupContainer = _props5.getPopupContainer,
           name = _props5.name,
           autoComplete = _props5.autoComplete,
-          onFocus = _props5.onFocus,
           autoFocus = _props5.autoFocus,
-          inputReadOnly = _props5.inputReadOnly;
+          inputReadOnly = _props5.inputReadOnly,
+          key = _props5.key;
       var _state = this.state,
           open = _state.open,
           value = _state.value;
 
       return _jsx('div', {
-        className: 'form-group rtp ' + (open ? 'rtpOpen' : ''),
+        className: 'form-group rtp' + (open ? ' rtpOpen' : '') + (className ? ' ' + className : ''),
         style: style
-      }, void 0, _react2.default.createElement('input', _extends({
-        className: 'form-control ' + this.props.inputClassName,
+      }, key, _react2.default.createElement('input', _extends({
+        className: 'form-control' + (this.props.inputClassName ? ' ' + this.props.inputClassName : ''),
         ref: this.saveInputRef,
         type: 'text',
         name: name,
+        key: key + 'Input',
         onKeyDown: this.onKeyDown,
         disabled: disabled,
         value: value && value.format(this.getFormat()) || '',
@@ -296,7 +289,7 @@ var ZapTimePicker = function (_Component) {
           }
         },
         autoFocus: autoFocus,
-        onChange: noop,
+        onChange: function onChange() {},
         readOnly: !!inputReadOnly
       })), _jsx('label', {
         className: 'form-control-label'
@@ -311,11 +304,11 @@ var ZapTimePicker = function (_Component) {
           _this3.props.onChange(null);
         },
         className: 'rtpClear'
-      }, void 0, _jsx(_zapIcons2.default, {
+      }, key + 'ClearButton', _jsx(_zapIcons2.default, {
         icon: 'errorCircle--solid'
       })), _jsx('div', {
         className: 'rtpWrapper'
-      }, void 0, _jsx('div', {
+      }, key + 'Wrapper', _jsx('div', {
         className: 'rtpPicker'
       }, void 0, this.getPanelElement())));
     }
@@ -327,7 +320,9 @@ var ZapTimePicker = function (_Component) {
 ZapTimePicker.propTypes = {
   prefixCls: _propTypes2.default.string,
   inputProps: _propTypes2.default.shape(),
+  inputClassName: _propTypes2.default.string,
   clearText: _propTypes2.default.string,
+  key: _propTypes2.default.string,
   value: _propTypes2.default.object,
   defaultOpenValue: _propTypes2.default.object,
   inputReadOnly: _propTypes2.default.bool,
@@ -336,10 +331,6 @@ ZapTimePicker.propTypes = {
   defaultValue: _propTypes2.default.object,
   open: _propTypes2.default.bool,
   defaultOpen: _propTypes2.default.bool,
-  align: _propTypes2.default.object,
-  placement: _propTypes2.default.any,
-  transitionName: _propTypes2.default.string,
-  getPopupContainer: _propTypes2.default.func,
   placeholder: _propTypes2.default.string,
   format: _propTypes2.default.string,
   showHour: _propTypes2.default.bool,
@@ -366,36 +357,40 @@ ZapTimePicker.propTypes = {
   secondStep: _propTypes2.default.number,
   focusOnOpen: _propTypes2.default.bool,
   onKeyDown: _propTypes2.default.func,
+  children: _propTypes2.default.func,
   autoFocus: _propTypes2.default.bool
 };
 ZapTimePicker.defaultProps = {
+  key: 'rcTimePicker',
   clearText: 'clear',
   prefixCls: 'rc-time-picker',
+  children: null,
+  disabled: false,
   defaultOpen: false,
+  autoFocus: false,
   inputReadOnly: false,
   style: {},
   className: '',
   popupClassName: '',
-  align: {},
+  inputClassName: null,
   defaultOpenValue: (0, _moment2.default)(),
   allowEmpty: true,
   showHour: true,
   showMinute: true,
   showSecond: true,
-  disabledHours: noop,
-  disabledMinutes: noop,
-  disabledSeconds: noop,
+  disabledHours: function disabledHours() {},
+  disabledMinutes: function disabledMinutes() {},
+  disabledSeconds: function disabledSeconds() {},
   hideDisabledOptions: false,
-  placement: 'bottomLeft',
-  onChange: noop,
-  onOpen: noop,
-  onClose: noop,
-  onFocus: noop,
-  onBlur: noop,
-  addon: noop,
+  onChange: function onChange() {},
+  onOpen: function onOpen() {},
+  onClose: function onClose() {},
+  onFocus: function onFocus() {},
+  onBlur: function onBlur() {},
+  addon: function addon() {},
   use12Hours: false,
   focusOnOpen: false,
-  onKeyDown: noop,
+  onKeyDown: function onKeyDown() {},
   inputProps: {}
 };
 
