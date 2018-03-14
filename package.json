@@ -1,6 +1,6 @@
 {
   "name": "@zapsa/zap-time-picker",
-  "version": "3.3.15",
+  "version": "3.3.16",
   "description": "Zap datepicker",
   "main": "./dist/",
   "scripts": {
