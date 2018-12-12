@@ -16,10 +16,15 @@ class ExampleView extends Component {
   render() {
     return (
       <div style={{ minHeight: '100vh' }}>
-        Coucou !
+        Standard timepicker
         <TimePicker
           placeholder="Input placeholder"
           showSecond={false}
+        />
+        <TimePicker
+          placeholder="Input placeholder"
+          showSecond={false}
+          minuteStep={5}
         />
       </div>
     );

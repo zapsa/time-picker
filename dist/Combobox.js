@@ -95,6 +95,19 @@ var Combobox = function (_Component) {
       } else {
         value.second(+itemValue);
       }
+      if (!_this.props.minuteOptions.find(function (option) {
+        return option === value.minute();
+      })) {
+        var closest = void 0;
+        var correctTime = void 0;
+        _this.props.minuteOptions.forEach(function (option) {
+          if (!closest || closest < 0 && option - value.minute() > closest || closest > 0 && option - value.minute() < closest) {
+            closest = option - value.minute();
+            correctTime = option;
+          }
+        });
+        value.minute(+correctTime);
+      }
       onChange(value);
     }, _this.onEnterSelectPanel = function (range) {
       _this.props.onCurrentSelectPanelChange(range);

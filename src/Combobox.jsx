@@ -73,12 +73,27 @@ class Combobox extends Component {
     } else {
       value.second(+itemValue);
     }
+    if (!this.props.minuteOptions.find(option => option === value.minute())) {
+      let closest;
+      let correctTime;
+      this.props.minuteOptions.forEach((option) => {
+        if (
+          !closest ||
+          (closest < 0 && option - value.minute() > closest) ||
+          (closest > 0 && option - value.minute() < closest)
+        ) {
+          closest = option - value.minute();
+          correctTime = option;
+        }
+      });
+      value.minute(+correctTime);
+    }
     onChange(value);
-  }
+  };
 
   onEnterSelectPanel = (range) => {
     this.props.onCurrentSelectPanelChange(range);
-  }
+  };
 
   getHourSelect(hour) {
     const {
@@ -93,7 +108,7 @@ class Combobox extends Component {
     let hourAdj;
     if (use12Hours) {
       hourOptionsAdj = [12].concat(hourOptions.filter(h => h < 12 && h > 0));
-      hourAdj = (hour % 12) || 12;
+      hourAdj = hour % 12 || 12;
     } else {
       hourOptionsAdj = hourOptions;
       hourAdj = hour;
