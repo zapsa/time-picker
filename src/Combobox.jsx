@@ -78,9 +78,10 @@ class Combobox extends Component {
       let correctTime;
       this.props.minuteOptions.forEach((option) => {
         if (
-          !closest ||
-          (closest < 0 && option - value.minute() > closest) ||
-          (closest > 0 && option - value.minute() < closest)
+          closest !== 0 &&
+          (!closest ||
+            (closest < 0 && option - value.minute() > closest) ||
+            (closest > 0 && option - value.minute() < closest))
         ) {
           closest = option - value.minute();
           correctTime = option;

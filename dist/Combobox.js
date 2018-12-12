@@ -101,7 +101,7 @@ var Combobox = function (_Component) {
         var closest = void 0;
         var correctTime = void 0;
         _this.props.minuteOptions.forEach(function (option) {
-          if (!closest || closest < 0 && option - value.minute() > closest || closest > 0 && option - value.minute() < closest) {
+          if (closest !== 0 && (!closest || closest < 0 && option - value.minute() > closest || closest > 0 && option - value.minute() < closest)) {
             closest = option - value.minute();
             correctTime = option;
           }
