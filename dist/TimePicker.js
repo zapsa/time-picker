@@ -101,14 +101,14 @@ var ZapTimePicker = function (_Component) {
     key: 'getFormat',
     value: function getFormat() {
       var _props = this.props,
-          format = _props.format,
+          momentFormat = _props.momentFormat,
           showHour = _props.showHour,
           showMinute = _props.showMinute,
           showSecond = _props.showSecond,
           use12Hours = _props.use12Hours;
 
-      if (format) {
-        return format;
+      if (momentFormat) {
+        return momentFormat;
       }
 
       if (use12Hours) {
@@ -332,7 +332,7 @@ ZapTimePicker.propTypes = {
   open: _propTypes2.default.bool,
   defaultOpen: _propTypes2.default.bool,
   placeholder: _propTypes2.default.string,
-  format: _propTypes2.default.string,
+  momentFormat: _propTypes2.default.string,
   showHour: _propTypes2.default.bool,
   showMinute: _propTypes2.default.bool,
   showSecond: _propTypes2.default.bool,

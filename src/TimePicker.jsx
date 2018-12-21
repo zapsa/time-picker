@@ -25,7 +25,7 @@ class ZapTimePicker extends Component {
     open: PropTypes.bool,
     defaultOpen: PropTypes.bool,
     placeholder: PropTypes.string,
-    format: PropTypes.string,
+    momentFormat: PropTypes.string,
     showHour: PropTypes.bool,
     showMinute: PropTypes.bool,
     showSecond: PropTypes.bool,
@@ -147,10 +147,10 @@ class ZapTimePicker extends Component {
 
   getFormat() {
     const {
-      format, showHour, showMinute, showSecond, use12Hours,
+      momentFormat, showHour, showMinute, showSecond, use12Hours,
     } = this.props;
-    if (format) {
-      return format;
+    if (momentFormat) {
+      return momentFormat;
     }
 
     if (use12Hours) {
