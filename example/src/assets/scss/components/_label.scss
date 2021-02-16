@@ -1,18 +1,21 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+
 .label {
   display: inline-block;
   padding: 0 1rem;
   border-radius: 1rem;
-  background-color: $grey-300;
-  color: $grey-700;
+  background-color: variables.$grey-300;
+  color: variables.$grey-700;
   text-transform: uppercase;
-  @include font-xs;
+  @include m-typography.font-xs;
 }
 
 .label--error {
   padding: 0;
   width: 2rem;
-  background-color: $red-500;
-  color: $white-00;
+  background-color: variables.$red-500;
+  color: variables.$white-00;
   text-align: center;
   font-weight: 500;
 }

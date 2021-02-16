@@ -1,3 +1,8 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-shadow';
+@use '../variables';
+
 .media-scroll {
   overflow-y: auto;
   min-height: 40rem;
@@ -16,19 +21,19 @@
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   width: 100%;
-  color: $grey-500;
-  @include font-s;
+  color: zs-variables.$grey-500;
+  @include m-typography.font-s;
 }
 
 .media-list-item {
   flex-basis: 20rem; // IE Fallback ?
   flex: 0 0 calc(25% - 1rem - 2px);
   margin: 0.5rem;
-  border: 1px solid $grey-200;
-  background-color: $white-00;
+  border: 1px solid zs-variables.$grey-200;
+  background-color: zs-variables.$white-00;
   text-align: right;
   line-height: 1;
-  @include shadowLevel-100;
+  @include m-shadow.shadowLevel-100;
 
   .dropdown {
     margin-right: 1rem;
@@ -43,11 +48,11 @@
 }
 
 .media-list-item--selected {
-  border-color: $prime-500;
-  @include shadowLevel-100--selected;
+  border-color: zs-variables.$prime-500;
+  @include m-shadow.shadowLevel-100--selected;
 
   > .mediaElement-wrapper {
-    background-color: $prime-50;
+    background-color: zs-variables.$prime-50;
   }
 
   .mediaElement {
@@ -57,7 +62,7 @@
 
 .media-list-item--uploading {
   .mediaElement-wrapper {
-    background-color: $grey-900;
+    background-color: zs-variables.$grey-900;
     cursor: default;
   }
 
@@ -70,7 +75,7 @@
   position: relative;
   width: 100%;
   height: 15rem;
-  background-color: $grey-50;
+  background-color: zs-variables.$grey-50;
   line-height: 1rem;
   cursor: pointer;
 }
@@ -102,7 +107,7 @@
   margin: auto;
   width: 5rem;
   height: 5rem;
-  border-radius: $border-radius;
+  border-radius: variables.$border-radius;
   //background-color: $white-00;
 
   img {

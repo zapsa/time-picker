@@ -1,7 +1,13 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-shadow';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
+@use '../variables';
+
 .dashboard {
   flex: 1;
   padding: 3rem;
-  background-color: $grey-50;
+  background-color: zs-variables.$grey-50;
 }
 
 .dashboard-container {
@@ -21,15 +27,15 @@
     align-items: center;
     padding: 2rem 2rem;
     border-bottom: 1px solid #ebebeb;
-    color: $grey-900;
+    color: zs-variables.$grey-900;
     text-transform: uppercase;
-    @include font-s;
+    @include m-typography.font-s;
   }
 }
 
 .dashboard-feed-icon {
   margin-right: 1rem;
-  @include icon-fill($grey-700);
+  @include m-icons.icon-fill(zs-variables.$grey-700);
 }
 
 .dashboard-sidebar {
@@ -39,10 +45,10 @@
 
 // Widget
 .widget {
-  border: 1px solid $grey-200;
-  border-radius: $border-radius;
-  background-color: $white-00;
-  @include shadowLevel-100;
+  border: 1px solid zs-variables.$grey-200;
+  border-radius: variables.$border-radius;
+  background-color: zs-variables.$white-00;
+  @include m-shadow.shadowLevel-100;
 }
 
 .widget-header {
@@ -59,7 +65,7 @@
 
   > .zap-icon {
     margin-right: 1rem;
-    @include icon-fill($grey-700);
+    @include m-icons.icon-fill(zs-variables.$grey-700);
   }
 
   .dropdown {
@@ -79,10 +85,10 @@
 .widget-body {
   clear: both;
   padding: 2rem;
-  color: $grey-700;
+  color: zs-variables.$grey-700;
 
   a {
-    color: $grey-700;
+    color: zs-variables.$grey-700;
 
     &:hover {
       color: inherit;
@@ -91,8 +97,8 @@
 
   h3 {
     //margin-bottom: 1rem;
-    color: $grey-900;
-    @include font-m;
+    color: zs-variables.$grey-900;
+    @include m-typography.font-m;
   }
 
   .eventBadge {
@@ -101,8 +107,8 @@
   }
 
   .metaInfo {
-    color: $grey-600;
-    @include font-s;
+    color: zs-variables.$grey-600;
+    @include m-typography.font-s;
   }
 }
 

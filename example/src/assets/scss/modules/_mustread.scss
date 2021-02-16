@@ -1,3 +1,8 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
+@use '../components/helpers';
+
 .mustread {
   padding: 8rem 0;
 }
@@ -16,7 +21,7 @@
 }
 
 .infinite-item + .infinite-item .mustread-list-item {
-  border-top: 1px solid $grey-200;
+  border-top: 1px solid variables.$grey-200;
 }
 
 .mustread-list-item-activity {
@@ -37,22 +42,22 @@
 .mustread-list-item-icon {
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: $grey-900;
+  background-color: variables.$grey-900;
   line-height: 1rem;
-  @include icon-fill($white-00);
+  @include m-icons.icon-fill(variables.$white-00);
 }
 
 .mustread-list-item-date {
   margin-bottom: 2rem;
   width: 100%;
-  color: $grey-600;
-  @include font-s;
+  color: variables.$grey-600;
+  @include m-typography.font-s;
 }
 
 .mustread-list-item-content {
   flex: 1;
   margin-left: 1rem;
-  color: $grey-700;
+  color: variables.$grey-700;
   @extend .clearfix;
 
   .eventBadge {
@@ -71,8 +76,8 @@
   }
 
   .metaInfo {
-    color: $grey-600;
-    @include font-s;
+    color: variables.$grey-600;
+    @include m-typography.font-s;
   }
 
   .actions {

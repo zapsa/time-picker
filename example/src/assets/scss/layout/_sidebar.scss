@@ -1,32 +1,34 @@
-
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
 
 // Sidebar Variables
 //
 
-$s-bg: $grey-800 !default;
-$s-logoBorder: rgba($white-00, 0.2) !default;
+$s-bg: variables.$grey-800 !default;
+$s-logoBorder: rgba(variables.$white-00, 0.2) !default;
 // Group Title
 $s-group-title: rgba(white, 0.5) !default;
 // Group Link
-$s-group-link-text: rgba($white-00, 0.8) !default;
-$s-group-link-text--hover: rgba($white-00, 0.8) !default;
-$s-group-link-text--active: $white-00 !default;
-$s-group-link--bg--hover: $grey-900 !default;
-$s-group-link--bg--active: $prime-400 !default;
+$s-group-link-text: rgba(variables.$white-00, 0.8) !default;
+$s-group-link-text--hover: rgba(variables.$white-00, 0.8) !default;
+$s-group-link-text--active: variables.$white-00 !default;
+$s-group-link--bg--hover: variables.$grey-900 !default;
+$s-group-link--bg--active: variables.$prime-400 !default;
 // Icons
-$s-iconColor: $white-00 !default;
+$s-iconColor: variables.$white-00 !default;
 $s-iconOpacity: 0.8 !default;
-$s-iconColor--hover: $white-00 !default;
+$s-iconColor--hover: variables.$white-00 !default;
 $s-iconOpacity--hover: 0.8 !default;
-$s-iconColor--active: $white-00 !default;
+$s-iconColor--active: variables.$white-00 !default;
 $s-iconOpacity--active: 1 !default;
 // Badge
-$s-badge-bg: $white-00 !default;
-$s-badge-text: $grey-800 !default;
-$s-badge-bg--active: $white-00 !default;
-$s-badge-text--active: $grey-800 !default;
+$s-badge-bg: variables.$white-00 !default;
+$s-badge-text: variables.$grey-800 !default;
+$s-badge-bg--active: variables.$white-00 !default;
+$s-badge-text--active: variables.$grey-800 !default;
 // Sublinkes
-$s-sublinks: rgba($white-00, 0.5) !default;
+$s-sublinks: rgba(variables.$white-00, 0.5) !default;
 // Right-Border Color
 $s-rightBorder-color: null !default;
 
@@ -76,7 +78,7 @@ $s-rightBorder-color: null !default;
 
   a {
     color: $s-group-link-text;
-    @include font-s;
+    @include m-typography.font-s;
 
     &:hover {
       color: $s-group-link-text;
@@ -85,7 +87,7 @@ $s-rightBorder-color: null !default;
 
   a.logOut {
     color: $s-sublinks;
-    @include font-xs;
+    @include m-typography.font-xs;
   }
 }
 
@@ -119,7 +121,7 @@ $s-rightBorder-color: null !default;
     height: 2rem;
     border-width: 0;
     background-color: transparent;
-    color: rgba($white-00, 0);
+    color: rgba(variables.$white-00, 0);
     cursor: pointer;
 
     &:active,
@@ -131,7 +133,7 @@ $s-rightBorder-color: null !default;
 
 
 .sidebar-group-title-actionIcon {
-  @include icon-fill ($s-group-title);
+  @include m-icons.icon-fill($s-group-title);
 }
 
 
@@ -154,7 +156,7 @@ $s-rightBorder-color: null !default;
     .zap-icon {
       float: left;
       margin-right: 2rem;
-      @include icon-fill($s-iconColor, $s-iconOpacity);
+      @include m-icons.icon-fill($s-iconColor, $s-iconOpacity);
 
       &.icon--12dp {
         margin-top: 0.25rem;
@@ -178,7 +180,7 @@ $s-rightBorder-color: null !default;
       color: $s-group-link-text--hover;
 
       .zap-icon {
-        @include icon-fill($s-iconColor--hover, $s-iconOpacity--hover);
+        @include m-icons.icon-fill($s-iconColor--hover, $s-iconOpacity--hover);
       }
     }
 
@@ -188,7 +190,7 @@ $s-rightBorder-color: null !default;
       color: $s-group-link-text--active;
 
       .zap-icon {
-        @include icon-fill($s-iconColor--active, $s-iconOpacity--active);
+        @include m-icons.icon-fill($s-iconColor--active, $s-iconOpacity--active);
       }
 
       .badge {

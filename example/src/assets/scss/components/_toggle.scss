@@ -1,3 +1,4 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
 
 // Tmp Style
 //
@@ -181,7 +182,7 @@
   width: 50px;
   height: 1rem;
   border-radius: 30px;
-  background-color: $grey-300;
+  background-color: variables.$grey-300;
   -webkit-transition: all 0.2s ease;
      -moz-transition: all 0.2s ease;
           transition: all 0.2s ease;
@@ -190,25 +191,25 @@
 .react-toggle:hover:not(.react-toggle--disabled) {
   .react-toggle-track {
     outline: none;
-    background-color: $grey-400;
+    background-color: variables.$grey-400;
   }
   .react-toggle-thumb {
-    background-color: $grey-600;
+    background-color: variables.$grey-600;
   }
 }
 
 .react-toggle--checked .react-toggle-track {
   outline: none;
-  background-color: $prime-200;
+  background-color: variables.$prime-200;
 }
 
 .react-toggle--checked:hover:not(.react-toggle--disabled) {
   .react-toggle-track {
     outline: none;
-    background-color: $prime-300;
+    background-color: variables.$prime-300;
   }
   .react-toggle-thumb {
-    background-color: $prime-700;
+    background-color: variables.$prime-700;
   }
 }
 
@@ -273,7 +274,7 @@
   outline: none;
   //border: 1px solid #4d4d4d;
   border-radius: 50%;
-  background-color: $grey-400;
+  background-color: variables.$grey-400;
   -webkit-transition: all 0.25s ease;
      -moz-transition: all 0.25s ease;
           transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0;
@@ -293,5 +294,5 @@
 .react-toggle--checked .react-toggle-thumb {
   left: 28px;
   //border-color: $prime-500;
-  background-color: $prime-500;
+  background-color: variables.$prime-500;
 }

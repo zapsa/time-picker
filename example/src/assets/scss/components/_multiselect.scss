@@ -1,3 +1,6 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-shadow';
+
 .multiselect {
   position: fixed;
   right: 0;
@@ -7,12 +10,12 @@
   justify-content: center;
   align-items: center;
   min-height: 8rem;
-  border-top: 1px solid $grey-200;
-  background-color: $white-00;
+  border-top: 1px solid variables.$grey-200;
+  background-color: variables.$white-00;
   animation-name: fadeInUp;
   animation-duration: 0.5s;
   animation-fill-mode: both;
-  @include shadowInverseLevel-300;
+  @include m-shadow.shadowInverseLevel-300;
 }
 
 

@@ -1,4 +1,7 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+
 .breadcrumb {
-  color: $grey-600;
-  @include font-s;
+  color: variables.$grey-600;
+  @include m-typography.font-s;
 }

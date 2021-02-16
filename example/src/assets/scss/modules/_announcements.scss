@@ -1,10 +1,13 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+
 .announcements {
   margin-top: 5rem;
 }
 
 .announcement-list-item {
   position: relative;
-  border: 1px solid $grey-200;
+  border: 1px solid variables.$grey-200;
 
   & > a {
     display: block;
@@ -14,8 +17,8 @@
   }
 
   h3 {
-    color: $grey-900;
-    @include font-m;
+    color: variables.$grey-900;
+    @include m-typography.font-m;
   }
 }
 
@@ -24,8 +27,8 @@
 }
 
 .announcement-item-date {
-  color: $grey-600;
-  @include font-xs;
+  color: variables.$grey-600;
+  @include m-typography.font-xs;
 }
 
 .announcement-item-menu {

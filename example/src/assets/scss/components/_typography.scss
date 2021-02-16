@@ -1,3 +1,5 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+
 a {
   color: #0056c9;
   text-decoration: none;
@@ -8,5 +10,5 @@ a {
 }
 
 .text--muted {
-  color: $grey-500;
+  color: variables.$grey-500;
 }

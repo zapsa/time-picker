@@ -1,6 +1,4 @@
-@use "timepicker";
-
-.#{timepicker.$prefixClass}-panel
+.rc-time-picker-panel
 {
     &-input
     {

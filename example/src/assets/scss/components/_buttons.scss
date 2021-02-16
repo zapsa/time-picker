@@ -1,3 +1,6 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
+
 .button {
   display: inline-flex;
   justify-content: center;
@@ -9,7 +12,7 @@
   border: 1px solid #dcddde;
   border-radius: 0.375rem;
   background-color: #dcddde;
-  color: $grey-700;
+  color: variables.$grey-700;
   text-align: center;
   font-weight: 500;
   font-size: 1.875rem;
@@ -17,13 +20,13 @@
   line-height: 4.5rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  @include icon-fill($grey-700);
+  @include m-icons.icon-fill(variables.$grey-700);
 
   &:hover {
-    border-color: $grey-400;
-    background-color: $grey-400;
-    color: $grey-900;
-    @include icon-fill($grey-900);
+    border-color: variables.$grey-400;
+    background-color: variables.$grey-400;
+    color: variables.$grey-900;
+    @include m-icons.icon-fill(variables.$grey-900);
   }
 }
 
@@ -40,38 +43,38 @@
 }
 
 .button--black {
-  border-color: $grey-900;
-  background-color: $grey-900;
-  color: $white-00;
+  border-color: variables.$grey-900;
+  background-color: variables.$grey-900;
+  color: variables.$white-00;
 
   &:hover {
-    border-color: $grey-800;
-    background-color: $grey-800;
-    color: $white-00;
+    border-color: variables.$grey-800;
+    background-color: variables.$grey-800;
+    color: variables.$white-00;
   }
 }
 
 .button--warning {
-  border-color: $orange-500;
-  background-color: $orange-500;
-  color: $grey-800-t;
+  border-color: variables.$orange-500;
+  background-color: variables.$orange-500;
+  color: variables.$grey-800-t;
 
   &:hover {
-    border-color: $orange-400;
-    background-color: $orange-400;
-    color: $grey-800-t;
+    border-color: variables.$orange-400;
+    background-color: variables.$orange-400;
+    color: variables.$grey-800-t;
   }
 }
 
 .button--green {
-  border-color: $green-500;
-  background-color: $green-500;
-  color: $white-00;
+  border-color: variables.$green-500;
+  background-color: variables.$green-500;
+  color: variables.$white-00;
 
   &:hover {
-    border-color: $green-600;
-    background-color: $green-600;
-    color: $white-00;
+    border-color: variables.$green-600;
+    background-color: variables.$green-600;
+    color: variables.$white-00;
   }
 }
 
@@ -80,11 +83,11 @@
   padding-left: 1rem;
   border: 0;
   background-color: transparent;
-  color: $prime-500;
+  color: variables.$prime-500;
 
   &:hover {
     background-color: transparent;
-    color: $prime-700;
+    color: variables.$prime-700;
   }
 
   &:focus {
@@ -95,16 +98,16 @@
 .button--office365 {
   border-color: #0073c8;
   background-color: #0073c8;
-  color: rgba($white-00, 0.8);
+  color: rgba(variables.$white-00, 0.8);
 
   &:hover {
     border-color: #0073c8;
     background-color: #006cc2;
-    color: rgba($white-00, 0.8);
+    color: rgba(variables.$white-00, 0.8);
   }
 
   strong {
-    color: rgba($white-00, 1);
+    color: rgba(variables.$white-00, 1);
     font-weight: 500;
   }
 }
@@ -133,7 +136,7 @@
   padding: 0;
   border-width: 0;
   background-color: transparent;
-  color: $prime-500;
+  color: variables.$prime-500;
   text-align: inherit;
   font: inherit;
   cursor: pointer;
@@ -146,10 +149,10 @@
 }
 
 .link--muted {
-  color: $grey-600;
+  color: variables.$grey-600;
 
   &:hover {
-    color: $prime-700;
+    color: variables.$prime-700;
   }
 }
 

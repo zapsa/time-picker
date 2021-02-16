@@ -1,7 +1,10 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+
 .main {
   flex: 1;
   overflow: auto;
-  color: $grey-900;
+  color: variables.$grey-900;
   font-size: 1.875rem;
 
   .container {
@@ -16,9 +19,9 @@
 
   h1 {
     margin: 0 0 4rem;
-    color: $grey-900;
+    color: variables.$grey-900;
     font-weight: 400;
-    @include font-xxl;
+    @include m-typography.font-xxl;
   }
 
   p {

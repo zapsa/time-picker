@@ -1,6 +1,11 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
+@use '../variables';
+
 .comments-more {
   margin-bottom: 2rem;
-  @include font-m;
+  @include m-typography.font-m;
 }
 
 .comment {
@@ -12,7 +17,7 @@
   overflow: hidden;
   width: 4rem;
   height: 4rem;
-  border-radius: $border-radius;
+  border-radius: variables.$border-radius;
 
   img {
     width: 100%;
@@ -102,10 +107,10 @@
 
 .comment-form-closeButton {
   margin-left: 1rem;
-  @include icon-fill($grey-500);
+  @include m-icons.icon-fill(zs-variables.$grey-500);
 
   &:hover {
-    @include icon-fill($grey-700);
+    @include m-icons.icon-fill(zs-variables.$grey-700);
   }
 }
 
@@ -113,7 +118,7 @@
 // compact Mode
 
 .comments--compact {
-  @include font-xs;
+  @include m-typography.font-xs;
 
   .comment {
     margin-bottom: 2rem;
@@ -125,7 +130,7 @@
   }
 
   .comment-body-author {
-    @include font-xs;
+    @include m-typography.font-xs;
   }
 
   .comment-footer + .comment--reply {

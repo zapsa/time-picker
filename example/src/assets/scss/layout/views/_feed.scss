@@ -1,3 +1,8 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
+@use '../../components/helpers';
+
 .view-feed-header {
   position: relative;
   display: flex;
@@ -18,15 +23,15 @@
 
 .view-feed-header-content {
   margin-left: 1rem;
-  color: $grey-700;
+  color: variables.$grey-700;
 
   strong {
-    color: $grey-900;
+    color: variables.$grey-900;
   }
 
   .datetime {
     color: #9c9ea1;
-    @include font-xs;
+    @include m-typography.font-xs;
   }
 }
 
@@ -41,18 +46,18 @@
   .comments {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid $grey-200;
+    border-top: 1px solid variables.$grey-200;
   }
 }
 
 .view-feed-body-item {
   display: block;
   margin-bottom: 2rem;
-  color: $grey-700;
+  color: variables.$grey-700;
   @extend .clearfix;
 
   &:hover {
-    color: $grey-700;
+    color: variables.$grey-700;
   }
 
   .picture {
@@ -62,13 +67,13 @@
   }
 
   h3 {
-    color: $grey-900;
-    @include font-m;
+    color: variables.$grey-900;
+    @include m-typography.font-m;
   }
 
   .metaInfo {
-    color: $grey-600;
-    @include font-s;
+    color: variables.$grey-600;
+    @include m-typography.font-s;
   }
 
   .eventBadge {
@@ -90,10 +95,10 @@
 // Pinned
 //
 .pinned-list {
-  border-bottom: 1px solid $grey-200;
+  border-bottom: 1px solid variables.$grey-200;
 
   .view-feed + .view-feed {
-    border-top: 1px solid $grey-200;
+    border-top: 1px solid variables.$grey-200;
   }
 
   .view-feed-body-item {
@@ -104,11 +109,11 @@
 .pinned-item-marker {
   margin-top: 0.5rem;
   margin-left: 3.5rem;
-  color: $grey-500;
-  @include font-xs;
+  color: variables.$grey-500;
+  @include m-typography.font-xs;
 
   .zap-icon {
     margin-right: 1rem;
-    @include icon-fill($grey-500);
+    @include m-icons.icon-fill(variables.$grey-500);
   }
 }

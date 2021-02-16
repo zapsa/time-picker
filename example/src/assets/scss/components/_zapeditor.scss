@@ -1,3 +1,7 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '../variables';
+
 .zapEditor {
   .toolbar {
     margin-bottom: 1rem;
@@ -14,29 +18,29 @@
     }
 
     &--normal {
-      margin-right: $editorMargins;
-      margin-left: $editorMargins;
+      margin-right: variables.$editorMargins;
+      margin-left: variables.$editorMargins;
 
       @media (max-width: 800px) {
-        margin-right: $editorMarginsSmall;
-        margin-left: $editorMarginsSmall;
+        margin-right: variables.$editorMarginsSmall;
+        margin-left: variables.$editorMarginsSmall;
       }
     }
   }
 
   .toolbar {
-    margin-right: $editorMargins;
-    margin-left: $editorMargins;
+    margin-right: variables.$editorMargins;
+    margin-left: variables.$editorMargins;
 
     @media (max-width: 800px) {
-      margin-right: $editorMarginsSmall;
-      margin-left: $editorMarginsSmall;
+      margin-right: variables.$editorMarginsSmall;
+      margin-left: variables.$editorMarginsSmall;
     }
   }
 
   .editorBar {
-    border-radius: $border-radius;
-    background-color: $white-00;
+    border-radius: variables.$border-radius;
+    background-color: zs-variables.$white-00;
   }
 
   .editorBar-group {
@@ -57,23 +61,23 @@
   }
 
   .DraftEditor-root {
-    margin-right: $editorMargins;
-    margin-left: $editorMargins;
+    margin-right: variables.$editorMargins;
+    margin-left: variables.$editorMargins;
 
     @media (max-width: 800px) {
-      margin-right: $editorMarginsSmall;
-      margin-left: $editorMarginsSmall;
+      margin-right: variables.$editorMarginsSmall;
+      margin-left: variables.$editorMarginsSmall;
     }
   }
 
   .DraftEditor-editorContainer figure {
-    margin-right: -$editorMargins;
+    margin-right: - variables.$editorMargins;
     margin-bottom: 3rem;
-    margin-left: -$editorMargins;
+    margin-left: - variables.$editorMargins;
 
     @media (max-width: 800px) {
-      margin-right: -$editorMarginsSmall;
-      margin-left: -$editorMarginsSmall;
+      margin-right: - variables.$editorMarginsSmall;
+      margin-left: - variables.$editorMarginsSmall;
     }
   }
 
@@ -104,14 +108,14 @@
   //
 
   .DraftEditor-editorContainer {
-    @include font-m;
+    @include m-typography.font-m;
 
     h1,
     h2 {
       margin-top: 2rem; //this only defines the margin of the first h1 & h2
       margin-bottom: 1rem;
       font-weight: 500;
-      @include font-xl;
+      @include m-typography.font-xl;
     }
 
     div ~ h1,
@@ -123,14 +127,14 @@
     h3 {
       margin-top: 5rem;
       margin-bottom: 1rem;
-      @include font-l;
+      @include m-typography.font-l;
     }
 
     blockquote {
       margin: 2rem 0 3rem 2rem;
       padding: 0.5rem 0 0.5rem 1rem;
-      color: $grey-600;
-      @include font-l;
+      color: zs-variables.$grey-600;
+      @include m-typography.font-l;
     }
 
     a {

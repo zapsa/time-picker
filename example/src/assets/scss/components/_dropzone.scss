@@ -1,3 +1,8 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
+@use '../variables';
+
 .dropzone {
   &--smallsquare {
     .dropzone-drop-area {
@@ -8,7 +13,7 @@
 }
 
 .dropzone-content-link {
-  color: $prime-500;
+  color: zs-variables.$prime-500;
 }
 
 .dropzone-drop-area {
@@ -18,22 +23,22 @@
   padding: 1rem;
   min-height: 12rem;
   width: 100%;
-  border: 1px dashed $grey-400;
-  border-radius: $border-radius;
-  background-color: $grey-50;
-  color: $grey-600;
+  border: 1px dashed zs-variables.$grey-400;
+  border-radius: variables.$border-radius;
+  background-color: zs-variables.$grey-50;
+  color: zs-variables.$grey-600;
   text-align: center;
   cursor: pointer;
-  @include font-s;
+  @include m-typography.font-s;
 
   &:hover {
-    background-color: $grey-100;
+    background-color: zs-variables.$grey-100;
   }
 
   .zap-icon {
     display: block;
     margin-bottom: 0.5rem;
-    @include icon-fill($grey-600);
+    @include m-icons.icon-fill(zs-variables.$grey-600);
   }
 
   & + .media-list {

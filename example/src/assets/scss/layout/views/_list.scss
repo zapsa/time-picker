@@ -1,3 +1,7 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
+
 .list {
   margin-bottom: 3rem;
 }
@@ -15,11 +19,11 @@
   font-weight: 500;
 
   .column {
-    color: $grey-600;
+    color: variables.$grey-600;
   }
 
   .column.is-active {
-    color: $grey-900;
+    color: variables.$grey-900;
   }
 }
 
@@ -35,7 +39,7 @@
   white-space: nowrap;
 
   a {
-    color: $grey-900;
+    color: variables.$grey-900;
 
     &:hover {
       color: inherit;
@@ -43,10 +47,10 @@
   }
 
   .link {
-    color: $prime-500;
+    color: variables.$prime-500;
 
     &:hover {
-      color: $prime-700;
+      color: variables.$prime-700;
     }
   }
 }
@@ -68,7 +72,7 @@
 
   .zap-icon {
     margin-right: 1rem;
-    @include icon-fill($grey-500);
+    @include m-icons.icon-fill(variables.$grey-500);
   }
 
   a {
@@ -91,7 +95,7 @@
 .column--icon {
   margin-right: 1rem;
   line-height: 1rem;
-  @include icon-fill($grey-500);
+  @include m-icons.icon-fill(variables.$grey-500);
 }
 
 .column--avatar {
@@ -147,8 +151,8 @@
   white-space: nowrap;
 }
 .column--title2l-meta {
-  color: $grey-500;
-  @include font-xs;
+  color: variables.$grey-500;
+  @include m-typography.font-xs;
 }
 
 
@@ -199,6 +203,6 @@
   line-height: 1;
 
   .zap-icon {
-    @include icon-fill($grey-900);
+    @include m-icons.icon-fill(variables.$grey-900);
   }
 }

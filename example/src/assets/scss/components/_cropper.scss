@@ -1,10 +1,16 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-shadow';
+@use '../variables';
+
 .cropper {
   position: relative;
   margin-bottom: 3rem;
 }
 
 .cropper-view-box {
-  outline: 2px solid $grey-200;
+  outline: 2px solid zs-variables.$grey-200;
 }
 
 .cropper-menu {
@@ -14,17 +20,17 @@
   display: inline-flex;
   margin-top: 1rem;
   margin-top: 1rem;
-  border: 1px solid $grey-200;
-  border-radius: $border-radius;
-  background-color: $white-00;
+  border: 1px solid zs-variables.$grey-200;
+  border-radius: variables.$border-radius;
+  background-color: zs-variables.$white-00;
   transform: translateX(-50%);
-  @include shadowLevel-100;
+  @include m-shadow.shadowLevel-100;
 }
 
 .cropper-menu-group {
   display: flex;
   height: 4rem;
-  border-right: 1px solid $grey-200;
+  border-right: 1px solid zs-variables.$grey-200;
 }
 
 .cropper-menu-button {
@@ -38,15 +44,15 @@
   background-color: transparent;
   color: inherit;
   cursor: pointer;
-  @include icon-fill($grey-600);
+  @include m-icons.icon-fill(zs-variables.$grey-600);
 
   &:hover {
-    @include icon-fill($grey-900);
+    @include m-icons.icon-fill(zs-variables.$grey-900);
   }
 
   &.is-active {
-    background-color: $prime-50;
-    @include icon-fill($prime-500);
+    background-color: zs-variables.$prime-50;
+    @include m-icons.icon-fill(zs-variables.$prime-500);
   }
 }
 
@@ -57,7 +63,7 @@
   align-items: center;
   margin-bottom: 3rem;
   height: 45rem;
-  background-color: $grey-50;
+  background-color: zs-variables.$grey-50;
 
   .button {
     align-self: center;
@@ -66,15 +72,15 @@
 }
 
 .cropper-placeholder-description {
-  color: $grey-600;
-  @include font-xs;
+  color: zs-variables.$grey-600;
+  @include m-typography.font-xs;
 }
 
 .cropper-note {
   position: absolute;
   bottom: 1rem;
   width: 100%;
-  color: $grey-300;
+  color: zs-variables.$grey-300;
   text-align: center;
-  @include font-xs;
+  @include m-typography.font-xs;
 }

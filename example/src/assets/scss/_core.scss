@@ -1,3 +1,5 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+
 #root,
 [data-reactroot],
 body,
@@ -18,7 +20,7 @@ html {
 
 body {
   overflow-x: hidden;
-  color: $grey-900;
+  color: variables.$grey-900;
   letter-spacing: 0.1px;
   font-weight: 400;
   font-size: 1.875rem;

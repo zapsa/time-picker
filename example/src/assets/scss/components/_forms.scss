@@ -1,3 +1,8 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '../variables';
+@use '../mixins/m-placeholder';
+
 .form-group {
   margin-bottom: 2rem;
 
@@ -16,14 +21,14 @@
   width: 100%;
   height: 6rem;
   border: 1px solid #dfdfdf;
-  border-radius: $border-radius;
+  border-radius: variables.$border-radius;
   color: #444444;
   font-size: 1.875rem;
   font-family: 'Roboto', sans-serif;
   line-height: 3rem;
   transition: all 0.2s ease-in-out;
-  @include placeholder {
-    color: $grey-500;
+  @include m-placeholder.placeholder {
+    color: zs-variables.$grey-500;
     opacity: 1;
   }
 
@@ -55,12 +60,12 @@ textarea.form-control {
 }
 
 .form-control-feedback {
-  color: $red-500;
+  color: zs-variables.$red-500;
 }
 
 .form-control-description {
-  color: $grey-500;
-  @include font-xs;
+  color: zs-variables.$grey-500;
+  @include m-typography.font-xs;
 }
 
 .form-control-description--checkbox {

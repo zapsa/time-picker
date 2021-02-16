@@ -1,9 +1,12 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '../variables';
+
 .alert {
   padding: 2rem;
 }
 
 .alert--error {
-  border-radius: $border-radius;
-  background-color: $red-50;
-  color: $red-600;
+  border-radius: variables.$border-radius;
+  background-color: zs-variables.$red-50;
+  color: zs-variables.$red-600;
 }

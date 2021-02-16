@@ -1,86 +1,86 @@
 @charset 'utf-8';
 
-@import '~normalize.css';
-@import 'variables';
-@import 'mixins';
-@import 'fonts';
+@use 'normalize';
+@use 'variables';
+@use 'mixins';
+@use 'fonts';
 
 // Core
 //
-@import 'core';
+@use 'core';
 
 // Client branding
 //
-@import 'client-branding';
+@use 'client-branding';
 
 // Layout
 //
-@import 'layout/views/feed';
-@import 'layout/views/grid';
-@import 'layout/views/list';
-@import 'layout/actionbar';
-@import 'layout/content';
-@import 'layout/main';
-@import 'layout/navbar';
-@import 'layout/navigation';
-@import 'layout/sidebar';
+@use 'layout/views/feed';
+@use 'layout/views/grid';
+@use 'layout/views/list';
+@use 'layout/actionbar';
+@use 'layout/content';
+@use 'layout/main';
+@use 'layout/navbar';
+@use 'layout/navigation';
+@use 'layout/sidebar';
 
 
 // Modules
 //
-@import 'modules/announcements';
-@import 'modules/dashboard';
-@import 'modules/login';
-@import 'modules/messages';
-@import 'modules/mustread';
-@import 'modules/notifications';
-@import 'modules/pages';
-@import 'modules/square-settings';
-@import 'modules/squares';
-@import 'modules/team';
-@import 'modules/user';
+@use 'modules/announcements';
+@use 'modules/dashboard';
+@use 'modules/login';
+@use 'modules/messages';
+@use 'modules/mustread';
+@use 'modules/notifications';
+@use 'modules/pages';
+@use 'modules/square-settings';
+@use 'modules/squares';
+@use 'modules/team';
+@use 'modules/user';
 
 // Components
 //
-@import 'components/alert';
-@import 'components/breadcrumb';
-@import 'components/buttons';
-@import 'components/comments';
-@import 'components/cropper';
-// @import 'components/datepicker';
-@import 'components/dropdown';
-@import 'components/dropzone';
-@import 'components/eventBadge';
-@import 'components/headings';
-@import 'components/helpers';
-@import 'components/forms';
-@import 'components/gmaps';
-@import 'components/icons';
-@import 'components/keywords';
-@import 'components/label';
-@import 'components/mediaManager';
-@import 'components/modal';
-@import 'components/multiselect';
-@import 'components/pagination';
-@import 'components/select';
-@import 'components/markAsReadBar';
-@import 'components/signup';
-@import 'components/social';
-@import 'components/tabs';
-@import 'components/toggle';
-@import 'components/toolbar';
-@import 'components/typography';
-@import 'components/zapeditor'; //overwrites the vendor files
+@use 'components/alert';
+@use 'components/breadcrumb';
+@use 'components/buttons';
+@use 'components/comments';
+@use 'components/cropper';
+// @use 'components/datepicker';
+@use 'components/dropdown';
+@use 'components/dropzone';
+@use 'components/eventBadge';
+@use 'components/headings';
+@use 'components/helpers';
+@use 'components/forms';
+@use 'components/gmaps';
+@use 'components/icons';
+@use 'components/keywords';
+@use 'components/label';
+@use 'components/mediaManager';
+@use 'components/modal';
+@use 'components/multiselect';
+@use 'components/pagination';
+@use 'components/select';
+@use 'components/markAsReadBar';
+@use 'components/signup';
+@use 'components/social';
+@use 'components/tabs';
+@use 'components/toggle';
+@use 'components/toolbar';
+@use 'components/typography';
+@use 'components/zapeditor'; //overwrites the vendor files
 
 // Public
 //
-@import 'public/signup';
+@use 'public/signup' as public-signup;
 
 
 // TMP files
 //
-@import 'components/events'; // TMP, only Backup, no impact
-@import 'components/tmp'; // Tmp style for DateTime Picker
+@use 'components/events'; // TMP, only Backup, no impact
+@use 'components/tmp'; // Tmp style for DateTime Picker
 
 // TMP as backup
 /*

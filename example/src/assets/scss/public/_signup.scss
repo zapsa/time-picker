@@ -1,6 +1,8 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables';
+
 .signup {
   height: 100%;
-  background-color: $grey-200;
+  background-color: variables.$grey-200;
 }
 
 .signup-content {

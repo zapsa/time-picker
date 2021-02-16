@@ -1,3 +1,8 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-shadow';
+@use '../../variables';
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -10,10 +15,10 @@
   flex: 0 1 35rem;
   //overflow: hidden;
   margin: 1rem;
-  border: 1px solid $grey-200;
-  border-radius: $border-radius;
+  border: 1px solid zs-variables.$grey-200;
+  border-radius: variables.$border-radius;
   background-color: white;
-  @include shadowLevel-100;
+  @include m-shadow.shadowLevel-100;
 
   .picture {
     display: block;
@@ -30,12 +35,12 @@
     margin: 2rem;
 
     .title {
-      color: $grey-900;
+      color: zs-variables.$grey-900;
       font-weight: 500;
-      @include font-m;
+      @include m-typography.font-m;
 
       a {
-        color: $grey-900;
+        color: zs-variables.$grey-900;
       }
     }
   }

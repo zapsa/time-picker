@@ -1,3 +1,9 @@
+@use '@zapsa/zap-styles/dist/import-var-mix/variables' as zs-variables;
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-typography';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-icons';
+@use '@zapsa/zap-styles/dist/import-var-mix/mixins/m-shadow';
+@use '../variables';
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -19,11 +25,11 @@
   display: none;
   min-width: 15rem;
   border: 1px solid #dfdfdf;
-  border-radius: $border-radius;
+  border-radius: variables.$border-radius;
   background-color: white;
   text-align: left;
   //transform: translate(-50%, 0);
-  @include shadowLevel-200;
+  @include m-shadow.shadowLevel-200;
 
   &.dropdown-content--open {
     display: block;
@@ -67,19 +73,19 @@
         width: 100%;
         border: none;
         background-color: transparent;
-        color: $grey-900;
+        color: zs-variables.$grey-900;
         text-align: left;
         cursor: pointer;
-        @include font-m;
+        @include m-typography.font-m;
 
         &:hover {
           //color: #0069ff;
-          background-color: $grey-50;
+          background-color: zs-variables.$grey-50;
         }
       }
 
       .dropdown-button-delete {
-        color: $red-500;
+        color: zs-variables.$red-500;
       }
 
       &:first-child {
@@ -95,10 +101,10 @@
   display: block;
   padding: 0.5rem;
   line-height: 1rem;
-  @include icon-fill($grey-500);
+  @include m-icons.icon-fill(zs-variables.$grey-500);
 
   &:hover {
-    @include icon-fill($grey-600);
+    @include m-icons.icon-fill(zs-variables.$grey-600);
   }
 
   &.button {
@@ -106,6 +112,6 @@
     align-items: center;
     padding-right: 2rem;
     padding-left: 2rem;
-    @include icon-fill($grey-600);
+    @include m-icons.icon-fill(zs-variables.$grey-600);
   }
 }
