@@ -1,4 +1,6 @@
-.#{$prefixClass}
+@use "timepicker";
+
+.#{timepicker.$prefixClass}
 {
     // &-input
     // {

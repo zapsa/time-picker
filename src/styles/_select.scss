@@ -1,4 +1,6 @@
-.#{$prefixClass}-panel-select
+@use "timepicker";
+
+.#{timepicker.$prefixClass}-panel-select
 {
     font-size: 12px;
 
@@ -65,7 +67,7 @@
     }
 }
 
-li.#{$prefixClass}-panel-select
+li.#{timepicker.$prefixClass}-panel-select
 {
     &-option-selected
     {

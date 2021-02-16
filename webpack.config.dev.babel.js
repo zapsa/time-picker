@@ -6,6 +6,7 @@ const distPath = path.resolve(__dirname, 'example/dist');
 const srcPath = path.resolve(__dirname, 'example/src');
 
 const config = {
+  mode: 'development',
   entry: [
     'react-hot-loader/patch',
     'webpack/hot/only-dev-server',
@@ -62,7 +63,7 @@ const config = {
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?name=icons/[name].[ext]',
+        type: 'asset/resource'
       },
     ],
   },
@@ -72,7 +73,7 @@ const config = {
       '.jsx',
     ],
   },
-  devtool: 'cheap-eval-source-map',
+  devtool: 'eval-cheap-source-map',
   devServer: {
     contentBase: srcPath,
     historyApiFallback: true,
@@ -91,7 +92,6 @@ const config = {
       },
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       favicon: path.join(srcPath, 'assets/images/favicon.png'),
       hash: true,

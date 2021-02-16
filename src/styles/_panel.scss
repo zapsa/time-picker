@@ -1,4 +1,6 @@
-.#{$prefixClass}-panel
+@use "timepicker";
+
+.#{timepicker.$prefixClass}-panel
 {
     position: absolute;
     z-index: 1070;

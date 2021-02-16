@@ -1,17 +1,11 @@
 {
   "plugins": [
-    "transform-react-inline-elements",
+    "@babel/plugin-transform-react-inline-elements",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-class-properties"
   ],
   "presets": [
-    "env", [
-      "latest",
-      {
-        "es2015": {
-          "modules": false,
-        },
-      },
-    ],
-    "react",
-    "stage-0",
-  ],
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ]
 }

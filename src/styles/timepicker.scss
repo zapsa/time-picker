@@ -14,8 +14,8 @@ $prefixClass: rc-time-picker;
 // }
 
 
-@import 'rtp';
-@import 'picker';
-@import 'panel';
-@import 'header';
-@import 'select';
+@use 'rtp';
+@use 'picker';
+@use 'panel';
+@use 'header';
+@use 'select';
