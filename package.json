@@ -5,16 +5,16 @@
   "license": "UNLICENSED",
   "main": "./dist/",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.babel.js --port 9293",
-    "build-css": "node-sass src -o dist",
-    "build": "rimraf dist && babel src -d dist && npm run build-css",
-    "prepare": "npm run build",
-    "publish": "zap-slack-nodetifications @zapsa/zap-time-picker $npm_package_version",
-    "lint": "npm run lint:src && npm run lint:webpack",
-    "lint:src": "eslint \"./src/**\"; exit 0",
-    "styleguide": "styleguidist server",
-    "styleguide-build": "styleguidist build",
-    "lint:webpack": "eslint \"./webpack/**\"; exit 0"
+    "start": "yarn webpack serve --config webpack.config.dev.babel.js --port 9293 --progress --bail --profile",
+    "build-css": "yarn sass --load-path .yarn/unplugged/@zapsa-zap-styles-virtual-*/node_modules src:dist",
+    "build": "yarn rimraf dist && yarn babel src -d dist && yarn build-css",
+    "prepare": "yarn build",
+    "publish": "yarn zap-slack-nodetifications @zapsa/zap-time-picker $npm_package_version",
+    "lint": "yarn lint:src && yarn lint:webpack",
+    "lint:src": "yarn eslint \"./src/**\"; exit 0",
+    "styleguide": "yarn styleguidist server",
+    "styleguide-build": "yarn styleguidist build",
+    "lint:webpack": "yarn eslint \"./webpack/**\"; exit 0"
   },
   "dependencies": {
     "@zapsa/zap-icons": "^2.0.0",
@@ -67,5 +67,10 @@
     "webpack": "^5.22.0",
     "webpack-dev-server": "^3.11.2"
   },
-  "author": "Quentin Hausser"
+  "author": "Quentin Hausser",
+  "dependenciesMeta": {
+    "@zapsa/zap-styles@4.0.1": {
+      "unplugged": true
+    }
+  }
 }

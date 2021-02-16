@@ -855,14 +855,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["@zapsa/zap-styles", [
         ["npm:4.0.1", {
-          "packageLocation": "./.yarn/cache/@zapsa-zap-styles-npm-4.0.1-0a6b2d5fee-36dfa5dbdc.zip/node_modules/@zapsa/zap-styles/",
+          "packageLocation": "./.yarn/unplugged/@zapsa-zap-styles-virtual-dfb6eeb30a/node_modules/@zapsa/zap-styles/",
           "packageDependencies": [
             ["@zapsa/zap-styles", "npm:4.0.1"]
           ],
           "linkType": "SOFT",
         }],
         ["virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:4.0.1", {
-          "packageLocation": "./.yarn/$$virtual/@zapsa-zap-styles-virtual-dfb6eeb30a/0/cache/@zapsa-zap-styles-npm-4.0.1-0a6b2d5fee-36dfa5dbdc.zip/node_modules/@zapsa/zap-styles/",
+          "packageLocation": "./.yarn/unplugged/@zapsa-zap-styles-virtual-dfb6eeb30a/node_modules/@zapsa/zap-styles/",
           "packageDependencies": [
             ["@zapsa/zap-styles", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:4.0.1"],
             ["@types/react", null],
