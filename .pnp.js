@@ -47,6 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:7.12.13"],
             ["@babel/register", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:7.12.13"],
             ["@babel/runtime", "npm:7.12.13"],
+            ["@hot-loader/react-dom", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:17.0.1"],
             ["@zapsa/zap-front-doc", "npm:0.0.9"],
             ["@zapsa/zap-icons", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:2.0.0"],
             ["@zapsa/zap-slack-nodetifications", "npm:0.0.8"],
@@ -2319,6 +2320,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@hot-loader/react-dom", [
+        ["npm:17.0.1", {
+          "packageLocation": "./.yarn/cache/@hot-loader-react-dom-npm-17.0.1-1ba2869259-f852a8296e.zip/node_modules/@hot-loader/react-dom/",
+          "packageDependencies": [
+            ["@hot-loader/react-dom", "npm:17.0.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:17.0.1", {
+          "packageLocation": "./.yarn/$$virtual/@hot-loader-react-dom-virtual-e99d2f899c/0/cache/@hot-loader-react-dom-npm-17.0.1-1ba2869259-f852a8296e.zip/node_modules/@hot-loader/react-dom/",
+          "packageDependencies": [
+            ["@hot-loader/react-dom", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:17.0.1"],
+            ["@types/react", null],
+            ["loose-envify", "npm:1.4.0"],
+            ["object-assign", "npm:4.1.1"],
+            ["react", "npm:17.0.1"],
+            ["scheduler", "npm:0.20.1"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@nicolo-ribaudo/chokidar-2", [
         ["npm:2.1.8-no-fsevents", {
           "packageLocation": "./.yarn/cache/@nicolo-ribaudo-chokidar-2-npm-2.1.8-no-fsevents-a21a333eb4-0efeea3b7d.zip/node_modules/@nicolo-ribaudo/chokidar-2/",
@@ -2781,6 +2807,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:7.12.13"],
             ["@babel/register", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:7.12.13"],
             ["@babel/runtime", "npm:7.12.13"],
+            ["@hot-loader/react-dom", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:17.0.1"],
             ["@zapsa/zap-front-doc", "npm:0.0.9"],
             ["@zapsa/zap-icons", "virtual:c3b446d17c36e4c5c72f3edaedd7420cbbb41f1c5e9e9721eaaa8b37abf26cfa64e543ee0163d22cbc55a9b3086e37b80403f39a22286cb5bfafeec6b8091ee8#npm:2.0.0"],
             ["@zapsa/zap-slack-nodetifications", "npm:0.0.8"],

@@ -100,7 +100,7 @@ class ZapTimePicker extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { value, open } = nextProps;
     if ('value' in nextProps) {
       this.setState({

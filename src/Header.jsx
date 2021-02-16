@@ -51,7 +51,7 @@ class Header extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { value, format } = nextProps;
     this.setState({
       str: value && value.format(format) || '',

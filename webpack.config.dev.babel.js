@@ -72,6 +72,9 @@ const config = {
       '.js',
       '.jsx',
     ],
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
   devtool: 'eval-cheap-source-map',
   devServer: {
