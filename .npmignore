@@ -4,3 +4,4 @@ node_modules
 npm-debug.log
 example
 webpack.config.dev.babel.js
+.yarn/plugins

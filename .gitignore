@@ -2,3 +2,10 @@ node_modules
 .DS_Store
 npm-debug.log
 ./example/node_modules/
+dist
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
